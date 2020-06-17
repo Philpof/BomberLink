@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Zelda';
+  src: url('fonts/HyliaSerifBeta-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Zelda_Symbol';
+  src: url('fonts/HylianSymbols.ttf') format('truetype');
+}
+
+html {
+  background-image: url("img/zeldaBackground.png");
+}
+
+#general {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Zelda', serif;
+  font-size: 3rem;
+}
+
+#commandes h3 {
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+#commandes h3 span {
+  font-family: 'Zelda_Symbol', serif;
+  text-transform: none;
+  font-size: 6rem;
+  color: #e01a18;
+}
+
+#commandes li span {
+  font-family: 'Zelda_Symbol', serif;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #e01a18;
+}
+
+#commandes li {
+   list-style-type: none;
+}
+
+#plateau {
+  position: relative;
+  margin-right: auto;
+  margin-left: 100px;
+  margin-top: 40px;
+  background-image: url("img/zeldaSolChateau.png");
+  width: 800px;
+  height: 800px;
+  border: 32px solid;
+  border-image: url("img/zeldaMurChateau.png") 32 round;
+}
+
+#pion {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("img/Chewbacca.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  top: 0px;
+  left: 0px;
+}
+
+#small {
+  font-style: italic;
+}
