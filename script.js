@@ -15,43 +15,29 @@ document.onkeydown = function(toucheClavier){
 
   // On détecte l'événement puis selon la fleche, on incrémente ou décrément les variables globales de position, i et j.
   switch(keyCode){
-  case 90:
-      if (directionY >= 40) {
-        directionY -= 40;
+    case 90:
+    case 38:
+      directionY -= 40;
+      if (directionY < 0) directionY = 0;
         break;
-      }
-      else {
-        directionY -= 0;
-        break;
-      }
 
-  case 83:
-      if (directionY <= 720) {
-        directionY += 40;
+    case 83:
+    case 40:
+      directionY += 40;
+      if (directionY > 760) directionY = 760;
         break;
-      }
-      else {
-        directionY += 0;
+
+    case 81:
+    case 37:
+      directionX -= 40;
+      if (directionX < 0) directionX = 0;
         break;
-      }
-  case 81:
-      if (directionX >= 40) {
-        directionX -= 40;
+
+    case 68:
+    case 39:
+      directionX += 40;
+      if (directionX > 760) directionX = 760;
         break;
-      }
-      else {
-        directionY -= 0;
-        break;
-      }
-  case 68:
-      if (directionX <= 720) {
-        directionX += 40;
-        break;
-      }
-      else {
-        directionY += 0;
-        break;
-      }
   }
   // Et enfin on applique les modifications :
   stylePion.top = String(directionY)+'px';
