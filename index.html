@@ -2,18 +2,16 @@
 <html lang="en" dir="ltr">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Philippe PERECHODOV">
     <title>BomberLink</title>
     <link rel="stylesheet" href="style.css">
-
   </head>
 
   <body>
 
-    <div id="general" class="">
+    <div id="general">
       <ul id="commandes">
         <img src="img/The_Legend_of_Zelda_A_Link_to_the_Past_Logo.png" alt="LogoZelda">
         <h3><span>k</span> Commandes <span>k</span></h3>
@@ -22,19 +20,19 @@
         <li><span>b</span> Q ou &#x21E6; : Gauche</li>
         <li><span>b</span> D ou &#x21E8; : Droite</li>
         <li><span>b</span> Espace : Bombe</li>
+        <small id="small">Philpof® - June 2020</small>
       </ul>
 
-      <div id="plateau" class="">
-        <div id="pion" class="">
-        </div>
+      <div id="plateau">
+        <div id="personnage"></div>
+        <!-- <img id="feu"></img> -->
       </div>
-
     </div>
 
-    <small id="small">Philpof® - June 2020</small>
-
-
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="creationBloc.js"></script>
+  <script type="text/javascript" src="animationBrasero.js"></script>
+  <script type="text/javascript" src="animationPersonnage.js"></script>
+  <script type="text/javascript" src="deplacementPersonnage.js"></script>
 
   </body>
 

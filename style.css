@@ -52,21 +52,22 @@ margin-top: 1rem;
 #commandes li {
    list-style-type: none;
 }
+#commandes small {
+  font-style: italic;
+  font-family: none;
+  font-size: 12px;
+}
 
 #plateau {
   position: relative;
   margin-right: 0;
   margin-left: 0;
-  margin-top: 40px;
-  background-image: url("img/zeldaSolChateau.png");
-  width: 800px;
-  height: 800px;
-  border: 32px solid;
-  border-image: url("img/zeldaMurChateau.png") 32 round;
+  margin-top: 4px;
 }
 
-#pion {
+#personnage {
   position: absolute;
+  z-index: 100;
   width: 40px;
   height: 40px;
   background-image: url("img/zeldaLinkBlock.png");
@@ -76,7 +77,14 @@ margin-top: 1rem;
   top: 0px;
   left: 0px;
 }
-
-#small {
-  font-style: italic;
-}
+/* #feu {
+  position: absolute;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-image: url("img/zeldaFeu1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  box-shadow: 5px 5px 5px #404040;
+} */
