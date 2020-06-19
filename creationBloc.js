@@ -41,20 +41,17 @@ for(var i = 0; i < H_GRID; i++){
     bloc.style.backgroundPosition = "center";
 
     if (random100() > 80){
-
-      bloc.style.backgroundImage = "url('img/zeldaFeu1.png')";
       bloc.className = "feuBrasero";
-      bloc.style.boxShadow = "5px 5px 5px #404040";
-      bloc.style.zIndex = "50";
       bloc.traverser = false;
     }
     else if (random100() > 50 && random100() <= 80 ) {
       bloc.style.backgroundImage = "url('img/zeldaSolEtPot.png')";
-      bloc.style.zIndex = "50";
+      bloc.className = "pot";
       bloc.traverser = false;
     }
     else {
       bloc.style.backgroundImage = "url('img/zeldaSolChateau.png')";
+      bloc.className = "sol";
       bloc.traverser = true;
     }
 
@@ -69,40 +66,40 @@ for(var i = 0; i < H_GRID; i++){
 // Exclusion des position ci-dessous pour le random
 blocGrid[0][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[0][0].traverser = true;
-blocGrid[0][0].style.boxShadow = "";
+blocGrid[0][0].className = "sol";
 blocGrid[1][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[1][0].traverser = true;
-blocGrid[1][0].style.boxShadow = "";
+blocGrid[1][0].className = "sol";
 blocGrid[0][1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[0][1].traverser = true;
-blocGrid[0][1].style.boxShadow = "";
+blocGrid[0][1].className = "sol";
 blocGrid[H_GRID - 1][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[H_GRID - 1][0].traverser = true;
-blocGrid[H_GRID - 1][0].style.boxShadow = "";
+blocGrid[H_GRID - 1][0].className = "sol";
 blocGrid[H_GRID - 2][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[H_GRID - 2][0].traverser = true;
-blocGrid[H_GRID - 2][0].style.boxShadow = "";
+blocGrid[H_GRID - 2][0].className = "sol";
 blocGrid[H_GRID - 1][1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[H_GRID - 1][1].traverser = true;
-blocGrid[H_GRID - 1][1].style.boxShadow = "";
+blocGrid[H_GRID - 1][1].className = "sol";
 blocGrid[0][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[0][V_GRID - 1].traverser = true;
-blocGrid[0][V_GRID - 1].style.boxShadow = "";
+blocGrid[0][V_GRID - 1].className = "sol";
 blocGrid[0][V_GRID - 2].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[0][V_GRID - 2].traverser = true;
-blocGrid[0][V_GRID - 2].style.boxShadow = "";
+blocGrid[0][V_GRID - 2].className = "sol";
 blocGrid[1][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[1][V_GRID - 1].traverser = true;
-blocGrid[1][V_GRID - 1].style.boxShadow = "";
+blocGrid[1][V_GRID - 1].className = "sol";
 blocGrid[H_GRID - 1][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[H_GRID - 1][V_GRID - 1].traverser = true;
-blocGrid[H_GRID - 1][V_GRID - 1].style.boxShadow = "";
+blocGrid[H_GRID - 1][V_GRID - 1].className = "sol";
 blocGrid[H_GRID - 2][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[H_GRID - 2][V_GRID - 1].traverser = true;
-blocGrid[H_GRID - 2][V_GRID - 1].style.boxShadow = "";
+blocGrid[H_GRID - 2][V_GRID - 1].className = "sol";
 blocGrid[H_GRID - 1][V_GRID - 2].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 blocGrid[H_GRID - 1][V_GRID - 2].traverser = true;
-blocGrid[H_GRID - 1][V_GRID - 2].style.boxShadow = "";
+blocGrid[H_GRID - 1][V_GRID - 2].className = "sol";
 
 // Positionnement du coffre
 var testH_GRID = (H_GRID / 2);
@@ -110,25 +107,21 @@ var testV_GRID = (V_GRID / 2);
 if (Number.isInteger(testH_GRID) && Number.isInteger(testV_GRID)) {
   blocGrid[H_GRID / 2][V_GRID / 2].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
   blocGrid[H_GRID / 2][V_GRID / 2].traverser = false;
-  blocGrid[H_GRID / 2][V_GRID / 2].style.boxShadow = "";
   blocGrid[H_GRID / 2][V_GRID / 2].style.zIndex = "60";
 }
 else if (Number.isInteger(testH_GRID)) {
   blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
   blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].traverser = false;
-  blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].style.boxShadow = "";
   blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].style.zIndex = "60";
 }
 else if (Number.isInteger(testV_GRID)) {
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].traverser = false;
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].style.boxShadow = "";
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].style.zIndex = "60";
 }
 else {
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].traverser = false;
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.boxShadow = "";
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.zIndex = "60";
 }
 

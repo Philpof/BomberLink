@@ -1,18 +1,18 @@
 const FEUBRASERO = document.querySelectorAll('.feuBrasero');
 
 // Un tableau qui va contenir toutes les images dans l'ordre
-var imagesFeu = [];
+let imagesFeu = [];
 imagesFeu.push("url('img/zeldaFeu1.png')");
 imagesFeu.push("url('img/zeldaFeu2.png')");
 imagesFeu.push("url('img/zeldaFeu3.png')");
 imagesFeu.push("url('img/zeldaFeu2.png')");
-imagesFeu.push("url('img/zeldaFeu2.png')");
+imagesFeu.push("url('img/zeldaFeu1.png')");
 
-var iFeu = 0;
+let iFeu = 0;
 
 function changerImageFeu(){
 
-    if (iFeu < imagesFeu.length -1) {
+    if (iFeu < imagesFeu.length) {
       FEUBRASERO.forEach(element => {
         element.style.backgroundImage = imagesFeu[iFeu]});
       iFeu++;
