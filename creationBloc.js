@@ -17,18 +17,18 @@ for(var i = 0; i < H_GRID; i++){
   for(var j = 0; j < V_GRID; j++){
 
 // Création du coffre au centre du plateau
-    let coffre = document.createElement("div");
-    coffre.style.width = "40px";
-    coffre.style.height = "40px";
-    coffre.style.display = "flex";
-    coffre.style.position = "absolute";
-    coffre.style.backgroundImage = "url('img/zeldaCoffreClose.png')";
-    coffre.style.backgroundRepeat = "no-repeat";
-    coffre.style.backgroundSize = "contain";
-    coffre.style.backgroundPosition = "center";
-    coffre.style.zIndex = "60";
-    coffre.style.boxShadow = "5px 5px 5px #404040";
-    coffre.traverser = false;
+    // let coffre = document.createElement("div");
+    // coffre.style.width = "40px";
+    // coffre.style.height = "40px";
+    // coffre.style.display = "flex";
+    // coffre.style.position = "absolute";
+    // coffre.style.backgroundImage = "url('img/zeldaCoffreClose.png')";
+    // coffre.style.backgroundRepeat = "no-repeat";
+    // coffre.style.backgroundSize = "contain";
+    // coffre.style.backgroundPosition = "center";
+    // coffre.style.zIndex = "60";
+    // coffre.style.boxShadow = "5px 5px 5px #404040";
+    // coffre.traverser = false;
 
 // Création des bloc aléatoire
     let bloc = document.createElement("div");
@@ -41,7 +41,9 @@ for(var i = 0; i < H_GRID; i++){
     bloc.style.backgroundPosition = "center";
 
     if (random100() > 80){
+
       bloc.style.backgroundImage = "url('img/zeldaFeu1.png')";
+      bloc.className = "feuBrasero";
       bloc.style.boxShadow = "5px 5px 5px #404040";
       bloc.style.zIndex = "50";
       bloc.traverser = false;
