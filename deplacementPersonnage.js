@@ -32,7 +32,6 @@ document.onkeydown = function(){
 
     case 32: // touche "Espace"
       creationBombes();
-      // creationBombe1();
       break;
 
     default: return;

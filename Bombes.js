@@ -7,7 +7,7 @@ bombe0.style.position = "absolute";
 bombe0.style.backgroundRepeat = "no-repeat";
 bombe0.style.backgroundSize = "auto";
 bombe0.style.backgroundPosition = "center";
-bombe0.style.zIndex = "40";
+bombe0.style.zIndex = "100";
 bombe0.id = "bombe0";
 
 // Bombe 1
@@ -18,7 +18,7 @@ bombe1.style.position = "absolute";
 bombe1.style.backgroundRepeat = "no-repeat";
 bombe1.style.backgroundSize = "auto";
 bombe1.style.backgroundPosition = "center";
-bombe1.style.zIndex = "40";
+bombe1.style.zIndex = "100";
 bombe1.id = "bombe1";
 
 // Bombe 2
@@ -29,7 +29,7 @@ bombe2.style.position = "absolute";
 bombe2.style.backgroundRepeat = "no-repeat";
 bombe2.style.backgroundSize = "auto";
 bombe2.style.backgroundPosition = "center";
-bombe2.style.zIndex = "40";
+bombe2.style.zIndex = "100";
 bombe2.id = "bombe2";
 
 // Création des Bombes 1 puis 2 puis 3 (si celle d'avant existent)
@@ -63,7 +63,7 @@ function creationBombes() {
     }
   }
 
-// Fonctions pour changement de couleru et explosion des différentes bombes
+// Fonctions pour changement de couleur et explosion des différentes bombes
 // Bombe 0
 function changeCouleurBombe0() {
   if (document.getElementById("bombe0")) {
