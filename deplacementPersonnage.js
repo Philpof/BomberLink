@@ -31,8 +31,11 @@ document.onkeydown = function(){
       break;
 
     case 32: // touche "Espace"
-        creationBombe();
+      creationBombes();
+      // creationBombe1();
       break;
+
+    default: return;
   }
   personnageADeplacer.style.left = String(x) + 'px';
   personnageADeplacer.style.top = String(y) + 'px';

@@ -18,6 +18,12 @@ plateau.style.height = WINDOW_HEIGHT + "px";
 plateau.style.border = "64px solid";
 plateau.style.borderImage = "url('img/zeldaMurChateau.png') 64 round";
 
+// dimension du personnage
+var personnage = document.getElementById('personnage');
+personnage.style.width = GRID_SIZE + "px";
+personnage.style.height = GRID_SIZE + "px";
+
+
 // Création des bloc aléatoire
 var blocGrid = [];
 for(var i = 0; i < H_GRID; i++){
@@ -25,8 +31,8 @@ for(var i = 0; i < H_GRID; i++){
   for(var j = 0; j < V_GRID; j++){
 
     let bloc = document.createElement("div");
-    bloc.style.width = "40px";
-    bloc.style.height = "40px";
+    bloc.style.width = GRID_SIZE + "px";
+    bloc.style.height = GRID_SIZE + "px";
     bloc.style.display = "flex";
     bloc.style.position = "absolute";
     bloc.style.backgroundRepeat = "no-repeat";
