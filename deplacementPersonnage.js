@@ -31,7 +31,9 @@ document.onkeydown = function(){
       break;
 
     case 32: // touche "Espace"
-      creationBombes();
+      if (!blocGrid[x / GRID_SIZE][y / GRID_SIZE].bombe) {
+        creationBombes(blocGrid);
+      }
       break;
 
     default: return;

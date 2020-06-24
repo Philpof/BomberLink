@@ -10,7 +10,6 @@ window.onload = function(){
 changerImageFeu();
 }
 
-
 // création du plateau de jeu
 var plateau = document.getElementById('plateau');
 plateau.style.width = WINDOW_WIDTH + "px";
@@ -22,7 +21,6 @@ plateau.style.borderImage = "url('img/zeldaMurChateau.png') 64 round";
 var personnage = document.getElementById('personnage');
 personnage.style.width = GRID_SIZE + "px";
 personnage.style.height = GRID_SIZE + "px";
-
 
 // Création des bloc aléatoire
 var blocGrid = [];

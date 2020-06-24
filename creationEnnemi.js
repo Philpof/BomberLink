@@ -1,8 +1,17 @@
-// const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
-//
-// const square= document.querySelector('#ennemi');
-// setInterval(() => {
-//    square.style.left= getRandom(0, 30 - 20)+'px'; // 👈🏼 Horizontally
-//    square.style.top = getRandom(0, 30 - 20)+'px'; // 👈🏼 Vertically
-//
-// }, 1000); // every 1/2 second
+let garde = document.getElementById('garde');
+garde.style.width = GRID_SIZE + "px";
+garde.style.height = GRID_SIZE + "px";
+garde.style.position = "absolute";
+garde.style.backgroundRepeat = "no-repeat";
+garde.style.backgroundSize = "contain";
+garde.style.backgroundPosition = "center";
+
+function random100() {
+  // return Math.floor(Math.random() * 100);
+}
+
+
+garde.style.marginLeft = (i * GRID_SIZE) + "px";
+garde.style.marginTop = (j * GRID_SIZE) + "px";
+
+document.getElementById("plateau").appendChild(garde);
