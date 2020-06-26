@@ -37,11 +37,12 @@ for(var i = 0; i < H_GRID; i++){
     bloc.style.backgroundSize = "contain";
     bloc.style.backgroundPosition = "center";
 
-    if (random100() > 80){
+    if (random100() > 90 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2)  && i < H_GRID && j >= 0 && j <= 1 || i >= 0  && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2)  && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)){
+
       bloc.className = "feuBrasero";
       bloc.traverser = false;
     }
-    else if (random100() > 60 && random100() <= 80 ) {
+    else if (random100() > 80 && random100() <= 90 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2)  && i < H_GRID && j >= 0 && j <= 1 || i >= 0  && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2)  && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.style.backgroundImage = "url('img/zeldaSolEtPot.png')";
       bloc.className = "pot";
       bloc.traverser = false;
@@ -60,70 +61,70 @@ for(var i = 0; i < H_GRID; i++){
   }
 }
 
-// Exclusion des positions ci-dessous pour le random
-blocGrid[0][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[0][0].traverser = true;
-blocGrid[0][0].className = "sol";
-blocGrid[1][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[1][0].traverser = true;
-blocGrid[1][0].className = "sol";
-blocGrid[0][1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[0][1].traverser = true;
-blocGrid[0][1].className = "sol";
-blocGrid[H_GRID - 1][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[H_GRID - 1][0].traverser = true;
-blocGrid[H_GRID - 1][0].className = "sol";
-blocGrid[H_GRID - 2][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[H_GRID - 2][0].traverser = true;
-blocGrid[H_GRID - 2][0].className = "sol";
-blocGrid[H_GRID - 1][1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[H_GRID - 1][1].traverser = true;
-blocGrid[H_GRID - 1][1].className = "sol";
-blocGrid[0][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[0][V_GRID - 1].traverser = true;
-blocGrid[0][V_GRID - 1].className = "sol";
-blocGrid[0][V_GRID - 2].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[0][V_GRID - 2].traverser = true;
-blocGrid[0][V_GRID - 2].className = "sol";
-blocGrid[1][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[1][V_GRID - 1].traverser = true;
-blocGrid[1][V_GRID - 1].className = "sol";
-blocGrid[H_GRID - 1][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[H_GRID - 1][V_GRID - 1].traverser = true;
-blocGrid[H_GRID - 1][V_GRID - 1].className = "sol";
-blocGrid[H_GRID - 2][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[H_GRID - 2][V_GRID - 1].traverser = true;
-blocGrid[H_GRID - 2][V_GRID - 1].className = "sol";
-blocGrid[H_GRID - 1][V_GRID - 2].style.backgroundImage = "url('img/zeldaSolChateau.png')";
-blocGrid[H_GRID - 1][V_GRID - 2].traverser = true;
-blocGrid[H_GRID - 1][V_GRID - 2].className = "sol";
+// // Exclusion des positions ci-dessous pour le random >> a été intégré dans les if et else if de la fonction précédente
+// blocGrid[0][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[0][0].traverser = true;
+// blocGrid[0][0].className = "sol";
+// blocGrid[1][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[1][0].traverser = true;
+// blocGrid[1][0].className = "sol";
+// blocGrid[0][1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[0][1].traverser = true;
+// blocGrid[0][1].className = "sol";
+// blocGrid[H_GRID - 1][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[H_GRID - 1][0].traverser = true;
+// blocGrid[H_GRID - 1][0].className = "sol";
+// blocGrid[H_GRID - 2][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[H_GRID - 2][0].traverser = true;
+// blocGrid[H_GRID - 2][0].className = "sol";
+// blocGrid[H_GRID - 1][1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[H_GRID - 1][1].traverser = true;
+// blocGrid[H_GRID - 1][1].className = "sol";
+// blocGrid[0][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[0][V_GRID - 1].traverser = true;
+// blocGrid[0][V_GRID - 1].className = "sol";
+// blocGrid[0][V_GRID - 2].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[0][V_GRID - 2].traverser = true;
+// blocGrid[0][V_GRID - 2].className = "sol";
+// blocGrid[1][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[1][V_GRID - 1].traverser = true;
+// blocGrid[1][V_GRID - 1].className = "sol";
+// blocGrid[H_GRID - 1][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[H_GRID - 1][V_GRID - 1].traverser = true;
+// blocGrid[H_GRID - 1][V_GRID - 1].className = "sol";
+// blocGrid[H_GRID - 2][V_GRID - 1].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[H_GRID - 2][V_GRID - 1].traverser = true;
+// blocGrid[H_GRID - 2][V_GRID - 1].className = "sol";
+// blocGrid[H_GRID - 1][V_GRID - 2].style.backgroundImage = "url('img/zeldaSolChateau.png')";
+// blocGrid[H_GRID - 1][V_GRID - 2].traverser = true;
+// blocGrid[H_GRID - 1][V_GRID - 2].className = "sol";
 
-// Le "div" au centre du plateau deveint un "coffre"
+// Le "div" au centre du plateau devient un "coffre"
 var testH_GRID = (H_GRID / 2);
 var testV_GRID = (V_GRID / 2);
 if (Number.isInteger(testH_GRID) && Number.isInteger(testV_GRID)) {
   blocGrid[H_GRID / 2][V_GRID / 2].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
   blocGrid[H_GRID / 2][V_GRID / 2].traverser = false;
   blocGrid[H_GRID / 2][V_GRID / 2].style.zIndex = "60";
-  blocGrid[H_GRID / 2][V_GRID / 2].className = "coffreClose";
+  blocGrid[H_GRID / 2][V_GRID / 2].id = "coffreClose";
 }
 else if (Number.isInteger(testH_GRID)) {
   blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
   blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].traverser = false;
   blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].style.zIndex = "60";
-  blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].className = "coffreClose";
+  blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].id = "coffreClose";
 }
 else if (Number.isInteger(testV_GRID)) {
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].traverser = false;
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].style.zIndex = "60";
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].className = "coffreClose";
+  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].id = "coffreClose";
 }
 else {
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
+  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].traverser = false;
   blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.zIndex = "60";
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].className = "coffreClose";
+  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].id = "coffreClose";
 }
 
 function random100() {

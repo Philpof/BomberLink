@@ -7,14 +7,13 @@ imagesFeu.push("url('img/zeldaFeu2.png')");
 imagesFeu.push("url('img/zeldaFeu3.png')");
 imagesFeu.push("url('img/zeldaFeu2.png')");
 
-
 let iFeu = 0;
 
 function changerImageFeu() {
 
     if (iFeu < imagesFeu.length-1) {
-      FEUBRASERO.forEach(element => {
-        element.style.backgroundImage = imagesFeu[iFeu];
+      FEUBRASERO.forEach(flamme => {
+        flamme.style.backgroundImage = imagesFeu[iFeu];
       });
       iFeu++;
     }

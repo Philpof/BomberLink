@@ -76,11 +76,6 @@ margin-top: 1rem;
   left: 0px;
 }
 
-#garde {
- z-index: 95;
- background-image: url("img/zeldaGarde.png");
-}
-
 .feuBrasero {
   box-shadow: 5px 5px 5px #404040;
   z-index: 50;
