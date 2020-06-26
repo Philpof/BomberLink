@@ -5,9 +5,9 @@ const GRID_SIZE = 40;
 const WINDOW_WIDTH = H_GRID * GRID_SIZE;
 const WINDOW_HEIGHT = V_GRID * GRID_SIZE;
 
-// Charge la fonction pour l'animation des Braseros
+// Chargement des fonctions
 window.onload = function(){
-changerImageFeu();
+changerImageFeu(); // fonction pour l'animation des Braseros
 }
 
 // création du plateau de jeu
@@ -21,6 +21,27 @@ plateau.style.borderImage = "url('img/zeldaMurChateau.png') 64 round";
 var personnage = document.getElementById('personnage');
 personnage.style.width = GRID_SIZE + "px";
 personnage.style.height = GRID_SIZE + "px";
+
+// Test et correction des coordonnées pour quelles soient des entiers afin de positionner un élémenet au milieu de la future grille
+var testH_GRID = (H_GRID / 2);
+var testV_GRID = (V_GRID / 2);
+
+if (Number.isInteger(testH_GRID) && Number.isInteger(testV_GRID)) {
+  var okH_GRID = testH_GRID;
+  var okV_GRID = testV_GRID;
+}
+else if (Number.isInteger(testH_GRID)) {
+  var okH_GRID = testH_GRID;
+  var okV_GRID = testV_GRID + 0.5;
+}
+else if (Number.isInteger(testV_GRID)) {
+  var okH_GRID = testH_GRID + 0.5;
+  var okV_GRID = testV_GRID ;
+}
+else  {
+  var okH_GRID = testH_GRID + 0.5;
+  var okV_GRID = testV_GRID + 0.5;
+}
 
 // Création des bloc aléatoire
 var blocGrid = [];
@@ -37,12 +58,18 @@ for(var i = 0; i < H_GRID; i++){
     bloc.style.backgroundSize = "contain";
     bloc.style.backgroundPosition = "center";
 
-    if (random100() > 90 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2)  && i < H_GRID && j >= 0 && j <= 1 || i >= 0  && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2)  && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)){
+    if (i === (okH_GRID) && j === (okV_GRID)) { // Le "div" au centre du plateau devient un "coffre fermé"
+      bloc.style.backgroundImage = "url('img/zeldaCoffreClose.png')";
+      bloc.traverser = false;
+      bloc.style.zIndex = "60";
+      bloc.id = "coffreClose";
+    }
 
+    else if (random100() > 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2)  && i < H_GRID && j >= 0 && j <= 1 || i >= 0  && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.className = "feuBrasero";
       bloc.traverser = false;
     }
-    else if (random100() > 80 && random100() <= 90 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2)  && i < H_GRID && j >= 0 && j <= 1 || i >= 0  && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2)  && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
+    else if (random100() > 65 && random100() <= 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2)  && i < H_GRID && j >= 0 && j <= 1 || i >= 0  && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.style.backgroundImage = "url('img/zeldaSolEtPot.png')";
       bloc.className = "pot";
       bloc.traverser = false;
@@ -60,6 +87,11 @@ for(var i = 0; i < H_GRID; i++){
     blocGrid[i].push(bloc);
   }
 }
+
+function random100() {
+  return Math.floor(Math.random() * 100);
+}
+
 
 // // Exclusion des positions ci-dessous pour le random >> a été intégré dans les if et else if de la fonction précédente
 // blocGrid[0][0].style.backgroundImage = "url('img/zeldaSolChateau.png')";
@@ -98,35 +130,3 @@ for(var i = 0; i < H_GRID; i++){
 // blocGrid[H_GRID - 1][V_GRID - 2].style.backgroundImage = "url('img/zeldaSolChateau.png')";
 // blocGrid[H_GRID - 1][V_GRID - 2].traverser = true;
 // blocGrid[H_GRID - 1][V_GRID - 2].className = "sol";
-
-// Le "div" au centre du plateau devient un "coffre"
-var testH_GRID = (H_GRID / 2);
-var testV_GRID = (V_GRID / 2);
-if (Number.isInteger(testH_GRID) && Number.isInteger(testV_GRID)) {
-  blocGrid[H_GRID / 2][V_GRID / 2].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
-  blocGrid[H_GRID / 2][V_GRID / 2].traverser = false;
-  blocGrid[H_GRID / 2][V_GRID / 2].style.zIndex = "60";
-  blocGrid[H_GRID / 2][V_GRID / 2].id = "coffreClose";
-}
-else if (Number.isInteger(testH_GRID)) {
-  blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
-  blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].traverser = false;
-  blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].style.zIndex = "60";
-  blocGrid[(H_GRID / 2)][(V_GRID / 2)+0.5].id = "coffreClose";
-}
-else if (Number.isInteger(testV_GRID)) {
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].style.backgroundImage = "url('img/zeldaCoffreClose.png')";
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].traverser = false;
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].style.zIndex = "60";
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)].id = "coffreClose";
-}
-else {
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].traverser = false;
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].style.zIndex = "60";
-  blocGrid[(H_GRID / 2)+0.5][(V_GRID / 2)+0.5].id = "coffreClose";
-}
-
-function random100() {
-  return Math.floor(Math.random() * 100);
-}
