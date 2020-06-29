@@ -1,3 +1,5 @@
+/* Animation en image par image avec une boucle > réaliser pour le défi personnel de le faire en javascript (mais un.gif aurait pu être utilisé) */
+
 const FEUBRASERO = document.querySelectorAll('.feuBrasero');
 
 // Un tableau qui va contenir toutes les images dans l'ordre

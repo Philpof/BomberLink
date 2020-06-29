@@ -1,5 +1,5 @@
 var gardes = [];
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < NOMBREGARDE; i++) {
   let garde = document.createElement("div");
 
   let x = 0;
@@ -70,8 +70,7 @@ function rondeGarde() {
     garde.style.top = String(gardeY * GRID_SIZE) + "px";
 
     let random = random100();
-    console.log(random100());
-
+  
       if (random < 25) {
         direction = "haut";
       }

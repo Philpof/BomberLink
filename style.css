@@ -12,8 +12,16 @@ html {
   background-image: url("img/zeldaBackground.png");
 }
 
-#commandes {
-margin-top: 1rem;
+h3 {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Animation de la TriForce avec un .gif pour tester */
+.tri_force {
+  max-width: 28px;
+  max-height: 30px;
+  margin: 0.3em;
 }
 
 #commandes img {
@@ -25,26 +33,18 @@ margin-top: 1rem;
   display: flex;
   flex-direction: row;
   font-family: 'Zelda', serif;
-  font-size: 3rem;
+  font-size: 2em;
 }
 
 #commandes h3 {
   text-decoration: underline;
   text-transform: capitalize;
   margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-#commandes h3 span {
-  font-family: 'Zelda_Symbol', serif;
-  text-transform: none;
-  font-size: 6rem;
-  color: #e01a18;
 }
 
 #commandes li span {
   font-family: 'Zelda_Symbol', serif;
-  font-size: 1.5rem;
+  font-size: 1em;
   vertical-align: middle;
   color: #e01a18;
 }
@@ -55,23 +55,24 @@ margin-top: 1rem;
 #commandes small {
   font-style: italic;
   font-family: none;
-  font-size: 12px;
+  font-size: 0.3em;
 }
 
 #plateau {
   position: relative;
   margin-right: 0;
   margin-left: 0;
-  margin-top: 4px;
+  margin-top: 0.3em;
 }
 
 #personnage {
   position: absolute;
   z-index: 90;
-  background-image: url("img/zeldaLink.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-image: url("sprites/imagesLink.png");
+  /* background-image: url("sprites/zeldaLinkMouvements.jpg"; */
+  /* background-repeat: no-repeat; */
+  /* background-size: 40px 40px; */
+  background-position: 0px 40px;
   top: 0px;
   left: 0px;
 }
