@@ -30,7 +30,6 @@ explosions.push(explosion);
 // Création des Bombes 1 puis 2 puis 3 (si celle d'avant existent) puis changement de couleur après 750 millisecondes puis explosion après 750 millisecondes puis disparition de la div
 function creationBombes(blocGrid) {
 
-
   // var i = 0;
   //
   //   if (!document.getElementById("bombe" + String(i))) {
@@ -51,7 +50,7 @@ function creationBombes(blocGrid) {
   //   }
   // }
 
-
+// Bombe n°1
   if (!document.getElementById("bombe0")) {
     var bombe = bombes[0];
 
@@ -104,21 +103,159 @@ function creationBombes(blocGrid) {
         }
         setTimeout(function disparitionBombe0() {
           if (document.getElementById("bombe0")) {
-            blocGrid[bombe0.x][bombe0.y].traverser = true;
-            blocGrid[bombe0.x][bombe0.y].bombe = false;
+            blocGrid[bombe.x][bombe.y].traverser = true;
+            blocGrid[bombe.x][bombe.y].bombe = false;
             document.getElementById("bombe0").style.backgroundSize = "auto";
-            document.getElementById("bombe0").remove();
+            // Destruction du personnage
+            var perso = document.getElementById('personnage');
+
+            if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
+              perso.style.backgroundImage = "url('img/zelda3force.gif')";
+              console.log(perso);
+            }
+            // Destrcution des gardes
+            for (var i = 0; i < gardes.length; i++) {
+              if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == gardes[i].offsetTop) {
+                gardes[i].traverser = true;
+                console.log(gardes[i].traverser);
+                gardes[i].remove();
+                console.log(gardes[i]);
+              }
+              if (parseInt(bombe.style.left) - GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
+                gardes[i].traverser = true;
+                gardes[i].remove();
+              }
+              if (parseInt(bombe.style.left) + GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
+                gardes[i].traverser = true;
+                gardes[i].remove();
+              }
+              if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == gardes[i].offsetTop) {
+                gardes[i].traverser = true;
+                gardes[i].remove();
+              }
+            }
+            // Destruction ou modifiction des éléments du décor
             if (document.getElementById("explosion0")) {
+              var idElement = blocGrid[(bombe.x) + 1][bombe.y].id;
+              if (idElement === "pot") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'solSansPot';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              }
+              else if (idElement === "feuBrasero") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].className = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'trou';
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion0").remove();
             }
             if (document.getElementById("explosion1")) {
+              var idElement = blocGrid[bombe.x][(bombe.y) + 1].id;
+              if (idElement === "pot") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'solSansPot';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].className = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'trou';
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion1").remove();
             }
             if (document.getElementById("explosion2")) {
+              var idElement = blocGrid[(bombe.x) - 1][bombe.y].id;
+              if (idElement === "pot") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'solSansPot';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].className = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'trou';
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion2").remove();
             }
             if (document.getElementById("explosion3")) {
+              var idElement = blocGrid[bombe.x][(bombe.y) - 1].id;
+              if (idElement === "pot") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'solSansPot';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].className = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'trou';
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion3").remove();
+            }
+            document.getElementById("bombe0").remove();
+            var idElement = blocGrid[bombe.x][bombe.y].id;
+            if (idElement === "fissure") {
+              blocGrid[bombe.x][bombe.y].id = 'trou';
+              blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
             }
           }
         }, 250);
@@ -126,6 +263,7 @@ function creationBombes(blocGrid) {
     }, 750);
   }
 
+// Bombe n°2
   else if (document.getElementById("bombe0") && !document.getElementById("bombe1")) {
     var bombe = bombes[1];
 
@@ -178,28 +316,138 @@ function creationBombes(blocGrid) {
         }
         setTimeout(function disparitionBombe1() {
           if (document.getElementById("bombe1")) {
-            blocGrid[bombe1.x][bombe1.y].traverser = true;
-            blocGrid[bombe1.x][bombe1.y].bombe = false;
+            blocGrid[bombe.x][bombe.y].traverser = true;
+            blocGrid[bombe.x][bombe.y].bombe = false;
             document.getElementById("bombe1").style.backgroundSize = "auto";
-            document.getElementById("bombe1").remove();
+
             if (document.getElementById("explosion0")) {
+              var idElement = blocGrid[(bombe.x) + 1][bombe.y].id;
+              if (idElement === "pot") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'solSansPot';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              }
+              else if (idElement === "feuBrasero") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].className = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'trou';
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion0").remove();
             }
             if (document.getElementById("explosion1")) {
+              var idElement = blocGrid[bombe.x][(bombe.y) + 1].id;
+              if (idElement === "pot") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'solSansPot';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].className = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'trou';
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion1").remove();
             }
             if (document.getElementById("explosion2")) {
+              var idElement = blocGrid[(bombe.x) - 1][bombe.y].id;
+              if (idElement === "pot") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'solSansPot';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].className = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'trou';
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion2").remove();
             }
             if (document.getElementById("explosion3")) {
+              var idElement = blocGrid[bombe.x][(bombe.y) - 1].id;
+              if (idElement === "pot") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'solSansPot';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].className = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'trou';
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion3").remove();
+            }
+            document.getElementById("bombe1").remove();
+            var idElement = blocGrid[bombe.x][bombe.y].id;
+            if (idElement === "fissure") {
+              blocGrid[bombe.x][bombe.y].id = 'trou';
+              blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
             }
           }
         }, 250);
       }, 750);
     }, 750);
     }
-
+// Bombe n°3
   else if (document.getElementById("bombe0") && document.getElementById("bombe1") && !document.getElementById("bombe2")) {
     var bombe = bombes[2];
 
@@ -252,21 +500,131 @@ function creationBombes(blocGrid) {
         }
         setTimeout(function disparitionBombe2() {
           if (document.getElementById("bombe2")) {
-            blocGrid[bombe2.x][bombe2.y].traverser = true;
-            blocGrid[bombe2.x][bombe2.y].bombe = false;
+            blocGrid[bombe.x][bombe.y].traverser = true;
+            blocGrid[bombe.x][bombe.y].bombe = false;
             document.getElementById("bombe2").style.backgroundSize = "auto";
-            document.getElementById("bombe2").remove();
+
             if (document.getElementById("explosion0")) {
+              var idElement = blocGrid[(bombe.x) + 1][bombe.y].id;
+              if (idElement === "pot") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'solSansPot';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              }
+              else if (idElement === "feuBrasero") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].className = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[(bombe.x) + 1][bombe.y].id = 'trou';
+                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion0").remove();
             }
             if (document.getElementById("explosion1")) {
+              var idElement = blocGrid[bombe.x][(bombe.y) + 1].id;
+              if (idElement === "pot") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'solSansPot';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].className = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[bombe.x][(bombe.y) + 1].id = 'trou';
+                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion1").remove();
             }
             if (document.getElementById("explosion2")) {
+              var idElement = blocGrid[(bombe.x) - 1][bombe.y].id;
+              if (idElement === "pot") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'solSansPot';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].className = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
+                blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[(bombe.x) - 1][bombe.y].id = 'trou';
+                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion2").remove();
             }
             if (document.getElementById("explosion3")) {
+              var idElement = blocGrid[bombe.x][(bombe.y) - 1].id;
+              if (idElement === "pot") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'solSansPot';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
+              }
+              else if (idElement === "coffreClose") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+                }
+              else if (idElement === "feuBrasero") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].className = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaFeu0.png')";
+              }
+              else if (idElement === "feuStop") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
+                blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
+              }
+              else if (idElement === "fissure") {
+                blocGrid[bombe.x][(bombe.y) - 1].id = 'trou';
+                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              }
               document.getElementById("explosion3").remove();
+            }
+            document.getElementById("bombe2").remove();
+            var idElement = blocGrid[bombe.x][bombe.y].id;
+            if (idElement === "fissure") {
+              blocGrid[bombe.x][bombe.y].id = 'trou';
+              blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
             }
           }
         }, 250);

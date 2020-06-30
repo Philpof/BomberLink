@@ -21,7 +21,7 @@ for (var i = 0; i < NOMBREGARDE; i++) {
   garde.style.backgroundRepeat = "no-repeat";
   garde.style.backgroundSize = "contain";
   garde.style.backgroundPosition = "center";
-  garde.style.backgroundImage = "url('img/zeldaGarde.png')";
+  garde.style.backgroundImage = "url('img/zeldaGardeVert.gif')";
   garde.style.zIndex = "95";
   garde.id = "garde" + String(i);
   garde.style.left = String(garde.gardeX * GRID_SIZE) + "px";
@@ -34,7 +34,7 @@ var frame = 0;
 
 function rondeGarde() {
 
-  if (frame === 30) {
+  if (frame === 6000) {
 
     for (var i = 0; i < gardes.length; i++) {
       let garde = gardes[i];
@@ -70,7 +70,7 @@ function rondeGarde() {
     garde.style.top = String(gardeY * GRID_SIZE) + "px";
 
     let random = random100();
-  
+
       if (random < 25) {
         direction = "haut";
       }
