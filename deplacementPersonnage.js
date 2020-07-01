@@ -52,7 +52,7 @@ document.onkeydown = function() {
   // Si le perso va sur un ennemi, il meurt
   for (var i = 0; i < gardes.length; i++) {
     if (x == gardes[i].offsetLeft && y == gardes[i].offsetTop) {
-      personnageADeplacer.style.backgroundImage = "url('img/zeldaMort.png')";
+      personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkMort.png')";
       personnageADeplacer.style.backgroundRepeat = "no-repeat";
       personnageADeplacer.style.backgroundSize = "auto";
       personnageADeplacer.style.backgroundPosition = "center";
@@ -69,9 +69,10 @@ document.onkeydown = function() {
 
   // Le Perso tombe s'il va sur un trou
   if (document.getElementById('trou')) {
-    for (var i = 0; i < trous.length; i++) {
-      console.log(trou[i]);
-      if (trous[i].offsetLeft == x && trous[i].offsetTop == y) {
+
+    // for (var i = 0; i < trous.length; i++) {
+
+      if (trou.offsetLeft == x && trou.offsetTop == y) {
         personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
         personnageADeplacer.style.backgroundRepeat = "no-repeat";
         personnageADeplacer.style.backgroundSize = "auto";
@@ -80,8 +81,8 @@ document.onkeydown = function() {
         setTimeout(function() {document.getElementById('personnage').remove();}, 500)
         alert("Attention où tu mets les pieds, il y a des trous par terre ! GAME OVER, On recommence ?");
         document.location.reload(true);
-        break;
+        return;
       }
-    }
+    // }
   }
 }

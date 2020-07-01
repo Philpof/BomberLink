@@ -117,7 +117,7 @@ function creationBombes(blocGrid) {
             var perso = document.getElementById('personnage');
 
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -126,7 +126,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -135,7 +135,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -144,7 +144,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -153,7 +153,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -166,7 +166,7 @@ function creationBombes(blocGrid) {
             for (var i = 0; i < gardes.length; i++) {
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -178,7 +178,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -190,7 +190,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) - GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -202,7 +202,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) + GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -214,7 +214,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -251,8 +251,9 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
               }
               else if (idElement === "fissure") {
-                blocGrid[(bombe.x) + 1][bombe.y].id = 'trou';
+                blocGrid[(bombe.x) + 1][bombe.y].id = "trou" + String(i);
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                trous.push()
               }
               document.getElementById("explosion0").remove();
             }
@@ -416,7 +417,7 @@ function creationBombes(blocGrid) {
             var perso = document.getElementById('personnage');
 
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -425,7 +426,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -434,7 +435,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -443,7 +444,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -452,7 +453,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -465,7 +466,7 @@ function creationBombes(blocGrid) {
             for (var i = 0; i < gardes.length; i++) {
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -477,7 +478,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -489,7 +490,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) - GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -501,7 +502,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) + GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -513,7 +514,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -715,7 +716,7 @@ function creationBombes(blocGrid) {
             var perso = document.getElementById('personnage');
 
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -724,7 +725,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -733,7 +734,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -742,7 +743,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -751,7 +752,7 @@ function creationBombes(blocGrid) {
               document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaMort.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -764,7 +765,7 @@ function creationBombes(blocGrid) {
             for (var i = 0; i < gardes.length; i++) {
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -776,7 +777,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -788,7 +789,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) - GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -800,7 +801,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) + GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
@@ -812,7 +813,7 @@ function creationBombes(blocGrid) {
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);

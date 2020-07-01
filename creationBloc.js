@@ -1,7 +1,7 @@
 // Constante avec valeur à modifier si besoin
 const H_GRID = 20;
 const V_GRID = 20;
-const NOMBREGARDE = 3;
+const NOMBREGARDE = 10;
 const GRID_SIZE = 40;
 
 // Constante à ne pas modifier
