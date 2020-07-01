@@ -1,3 +1,5 @@
+var personnage = document.getElementById('personnage');
+
 var gardes = [];
 for (var i = 0; i < NOMBREGARDE; i++) {
   let garde = document.createElement("div");
@@ -10,7 +12,7 @@ for (var i = 0; i < NOMBREGARDE; i++) {
       y = Math.floor(Math.random() * (V_GRID));
   }
 
-  blocGrid[x][y].traverser = false;
+  // blocGrid[x][y].traverser = false;
   garde.gardeX = x;
   garde.gardeY = y;
   garde.direction = "bas";
@@ -26,6 +28,7 @@ for (var i = 0; i < NOMBREGARDE; i++) {
   garde.id = "garde" + String(i);
   garde.style.left = String(garde.gardeX * GRID_SIZE) + "px";
   garde.style.top = String(garde.gardeY * GRID_SIZE) + "px";
+  garde.traverser = false;
   plateau.appendChild(garde);
   gardes.push(garde);
 }
@@ -34,7 +37,7 @@ var frame = 0;
 
 function rondeGarde() {
 
-  if (frame === 6000) {
+  if (frame === 30) {
 
     for (var i = 0; i < gardes.length; i++) {
       let garde = gardes[i];
@@ -69,6 +72,18 @@ function rondeGarde() {
     garde.style.left = String(gardeX * GRID_SIZE) + "px";
     garde.style.top = String(gardeY * GRID_SIZE) + "px";
 
+    // Si le garde va sur le perso, celui-ci meurt
+      if (personnage.offsetLeft == garde.gardeX * GRID_SIZE && personnage.offsetTop == garde.gardeY * GRID_SIZE) {
+        personnage.style.backgroundImage = "url('img/zeldaMort.png')";
+        personnage.style.backgroundRepeat = "no-repeat";
+        personnage.style.backgroundSize = "auto";
+        personnage.style.backgroundPosition = "center";
+        persoDead = true;
+        alert("GAME OVER, Recommencer ?");
+        document.location.reload(true);
+        break;
+      }
+
     let random = random100();
 
       if (random < 25) {
@@ -87,7 +102,7 @@ function rondeGarde() {
       garde.gardeX = gardeX;
       garde.gardeY = gardeY;
       garde.direction = direction;
-      blocGrid[gardeX][gardeY].traverser = false;
+      // blocGrid[gardeX][gardeY].traverser = false;
     }
 
     frame = 0;

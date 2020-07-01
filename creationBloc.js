@@ -13,14 +13,14 @@ window.onload = function(){
 changerImageFeu(); // fonction pour l'animation des Braseros
 }
 
-// création du plateau de jeu
+// Création du plateau de jeu
 var plateau = document.getElementById('plateau');
 plateau.style.width = WINDOW_WIDTH + "px";
 plateau.style.height = WINDOW_HEIGHT + "px";
 plateau.style.border = "64px solid";
 plateau.style.borderImage = "url('img/zeldaMurChateau.png') 64 round";
 
-// dimension du personnage
+// Dimensions du personnage
 var personnage = document.getElementById('personnage');
 personnage.style.width = GRID_SIZE + "px";
 personnage.style.height = GRID_SIZE + "px";
