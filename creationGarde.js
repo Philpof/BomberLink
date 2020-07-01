@@ -23,7 +23,7 @@ for (var i = 0; i < NOMBREGARDE; i++) {
   garde.style.backgroundRepeat = "no-repeat";
   garde.style.backgroundSize = "contain";
   garde.style.backgroundPosition = "center";
-  garde.style.backgroundImage = "url('img/zeldaGardeVert.gif')";
+  garde.style.backgroundImage = "url('img/zeldaGardeVertBas1.png')";
   garde.style.zIndex = "95";
   garde.id = "garde" + String(i);
   garde.style.left = String(garde.gardeX * GRID_SIZE) + "px";
@@ -37,7 +37,7 @@ var frame = 0;
 
 function rondeGarde() {
 
-  if (frame === 30) {
+  if (frame === 85) {
 
     for (var i = 0; i < gardes.length; i++) {
       let garde = gardes[i];
@@ -47,42 +47,46 @@ function rondeGarde() {
       blocGrid[gardeX][gardeY].traverser = true;
 
     switch (direction) {
-      case "gauche":
+      case "haut":
+        garde.style.backgroundImage = "url('img/zeldaGardeVertHaut.gif')";
         if (gardeY > 0 && blocGrid[gardeX][gardeY - 1].traverser) {
           gardeY--;
         }
         break;
       case "droite":
+        garde.style.backgroundImage = "url('img/zeldaGardeVertDroit.gif')";
         if (gardeX < H_GRID - 1 && blocGrid[gardeX + 1][gardeY].traverser) {
           gardeX++;
         }
         break;
-      case "haut":
+      case "bas":
+        garde.style.backgroundImage = "url('img/zeldaGardeVertBas.gif')";
         if (gardeY < H_GRID - 1 && blocGrid[gardeX][gardeY + 1].traverser) {
           gardeY++;
         }
         break;
-      case "bas":
+      case "gauche":
+        garde.style.backgroundImage = "url('img/zeldaGardeVertGauche.gif')";
         if (gardeX > 0 && blocGrid[gardeX - 1][gardeY].traverser) {
           gardeX--;
         }
         break;
     }
 
+    // Si le garde va sur le perso, celui-ci meurt
+    if (personnage.offsetLeft == garde.gardeX * GRID_SIZE && personnage.offsetTop == garde.gardeY * GRID_SIZE) {
+      personnage.style.backgroundImage = "url('img/zeldaMort.png')";
+      personnage.style.backgroundRepeat = "no-repeat";
+      personnage.style.backgroundSize = "auto";
+      personnage.style.backgroundPosition = "center";
+      persoDead = true;
+      alert("Un garde t'as tué ! GAME OVER, Recommencer ?");
+      document.location.reload(true);
+      break;
+    }
+
     garde.style.left = String(gardeX * GRID_SIZE) + "px";
     garde.style.top = String(gardeY * GRID_SIZE) + "px";
-
-    // Si le garde va sur le perso, celui-ci meurt
-      if (personnage.offsetLeft == garde.gardeX * GRID_SIZE && personnage.offsetTop == garde.gardeY * GRID_SIZE) {
-        personnage.style.backgroundImage = "url('img/zeldaMort.png')";
-        personnage.style.backgroundRepeat = "no-repeat";
-        personnage.style.backgroundSize = "auto";
-        personnage.style.backgroundPosition = "center";
-        persoDead = true;
-        alert("GAME OVER, Recommencer ?");
-        document.location.reload(true);
-        break;
-      }
 
     let random = random100();
 
@@ -104,10 +108,8 @@ function rondeGarde() {
       garde.direction = direction;
       // blocGrid[gardeX][gardeY].traverser = false;
     }
-
     frame = 0;
   }
-
 frame++;
 
 // On crée l'animation - 60 x / seconde

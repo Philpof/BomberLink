@@ -1,3 +1,6 @@
+const VICTOIRE = "Bravo ! Tu as gagné ! On recommence ?";
+const DEFAITEBOMBE = "Oula ! Faut pas rester près d'une bombe, hein ! GAME OVER, on recommence ?";
+
 let bombes = [];
 for (var i = 0; i < 3; i++) {
   let bombe = document.createElement("div");
@@ -26,6 +29,9 @@ explosion.style.backgroundImage = "url('img/zeldaExplosion.png')";
 explosion.id = "explosion" + String(i);
 explosions.push(explosion);
 }
+
+let trous = []; ///////////en cours
+
 
 // Création des Bombes 1 puis 2 puis 3 (si celle d'avant existent) puis changement de couleur après 750 millisecondes puis explosion après 750 millisecondes puis disparition de la div
 function creationBombes(blocGrid) {
@@ -115,30 +121,45 @@ function creationBombes(blocGrid) {
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
 
             // Destruction des gardes
@@ -150,7 +171,7 @@ function creationBombes(blocGrid) {
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
@@ -162,7 +183,7 @@ function creationBombes(blocGrid) {
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
@@ -174,7 +195,7 @@ function creationBombes(blocGrid) {
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
@@ -186,7 +207,7 @@ function creationBombes(blocGrid) {
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
@@ -198,7 +219,7 @@ function creationBombes(blocGrid) {
                 gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
@@ -399,80 +420,105 @@ function creationBombes(blocGrid) {
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
 
             // Destruction des gardes
             for (var i = 0; i < gardes.length; i++) {
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) - GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) + GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
@@ -673,80 +719,105 @@ function creationBombes(blocGrid) {
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
               perso.style.backgroundImage = "url('img/zeldaMort.png')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
+              persoDead = true;
+              alert(DEFAITEBOMBE);
+              document.location.reload(true);
             }
 
             // Destruction des gardes
             for (var i = 0; i < gardes.length; i++) {
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) - GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) + GRID_SIZE == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
               }
               if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == gardes[i].offsetTop) {
                 gardes[i].traverser = true;
-                gardes[i].remove();
+                gardes[i].style.backgroundImage = "url('img/zeldaCasqueGardeCasse.png')";
+                gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.zIndex = "50";
                 gardes.splice(i, 1);
                 if (gardes.length == 0) {
-                  alert("Victoire");
+                  alert(VICTOIRE);
                   document.location.reload(true);
                   return;
                 }
@@ -880,5 +951,5 @@ function creationBombes(blocGrid) {
         }, 250);
       }, 750);
     }, 750);
-    }
+  }
 }

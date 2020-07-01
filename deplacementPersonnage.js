@@ -57,7 +57,7 @@ document.onkeydown = function() {
       personnageADeplacer.style.backgroundSize = "auto";
       personnageADeplacer.style.backgroundPosition = "center";
       persoDead = true;
-      alert("GAME OVER, Recommencer ?");
+      alert("Tu as foncé sur un garde ! C'est moche ! GAME OVER, on recommence ?");
       document.location.reload(true);
       break;
     }
@@ -67,20 +67,21 @@ document.onkeydown = function() {
   personnageADeplacer.style.left = String(x) + 'px';
   personnageADeplacer.style.top = String(y) + 'px';
 
-  // Le Perso tombe s'il va sur un trou (à faire)
+  // Le Perso tombe s'il va sur un trou
   if (document.getElementById('trou')) {
-    let trou = document.getElementById('trou');
-    if (trou.offsetLeft == x && trou.offsetTop == y) {
-      personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
-      personnageADeplacer.style.backgroundRepeat = "no-repeat";
-      personnageADeplacer.style.backgroundSize = "auto";
-      personnageADeplacer.style.backgroundPosition = "center";
-      persoDead = true;
-      setTimeout(function() {document.getElementById('personnage').remove();}, 500)
-      alert("GAME OVER, Recommencer ?");
-      document.location.reload(true);
-
+    for (var i = 0; i < trous.length; i++) {
+      console.log(trou[i]);
+      if (trous[i].offsetLeft == x && trous[i].offsetTop == y) {
+        personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
+        personnageADeplacer.style.backgroundRepeat = "no-repeat";
+        personnageADeplacer.style.backgroundSize = "auto";
+        personnageADeplacer.style.backgroundPosition = "center";
+        persoDead = true;
+        setTimeout(function() {document.getElementById('personnage').remove();}, 500)
+        alert("Attention où tu mets les pieds, il y a des trous par terre ! GAME OVER, On recommence ?");
+        document.location.reload(true);
+        break;
+      }
     }
   }
-
 }
