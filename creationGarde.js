@@ -7,9 +7,9 @@ for (var i = 0; i < NOMBREGARDE; i++) {
   let x = 0;
   let y = 0;
 
-  while (!blocGrid[x][y].traverser || (x === 0 && y === 0) || /* Exclusion des positions ci-après pour la position de x et y */(x >= 0 && x <= 1 && y >= 0 && y <= 1 || x >= (H_GRID - 2)  && x < H_GRID && y >= 0 && y <= 1 || x >= 0  && x <= 1 && y >= (V_GRID - 2) && y < V_GRID || x >= (H_GRID - 2)  && x < H_GRID && y >= (V_GRID - 2) && y < V_GRID)) {
-      x = Math.floor(Math.random() * (H_GRID));
-      y = Math.floor(Math.random() * (V_GRID));
+  while (!blocGrid[x][y].traverser || (x === 0 && y === 0) || /* Exclusion des positions ci-après pour la position de x et y */ (x >= 0 && x <= 1 && y >= 0 && y <= 1 || x >= (H_GRID - 2) && x < H_GRID && y >= 0 && y <= 1 || x >= 0 && x <= 1 && y >= (V_GRID - 2) && y < V_GRID || x >= (H_GRID - 2) && x < H_GRID && y >= (V_GRID - 2) && y < V_GRID)) {
+    x = Math.floor(Math.random() * (H_GRID));
+    y = Math.floor(Math.random() * (V_GRID));
   }
 
   // blocGrid[x][y].traverser = false;
@@ -46,37 +46,37 @@ function rondeGarde() {
       let direction = garde.direction;
       blocGrid[gardeX][gardeY].traverser = true;
 
-    switch (direction) {
-      case "haut":
-        garde.style.backgroundImage = "url('img/zeldaGardeVertHaut.gif')";
-        if (gardeY > 0 && blocGrid[gardeX][gardeY - 1].traverser) {
-          gardeY--;
-        }
-        break;
-      case "droite":
-        garde.style.backgroundImage = "url('img/zeldaGardeVertDroit.gif')";
-        if (gardeX < H_GRID - 1 && blocGrid[gardeX + 1][gardeY].traverser) {
-          gardeX++;
-        }
-        break;
-      case "bas":
-        garde.style.backgroundImage = "url('img/zeldaGardeVertBas.gif')";
-        if (gardeY < H_GRID - 1 && blocGrid[gardeX][gardeY + 1].traverser) {
-          gardeY++;
-        }
-        break;
-      case "gauche":
-        garde.style.backgroundImage = "url('img/zeldaGardeVertGauche.gif')";
-        if (gardeX > 0 && blocGrid[gardeX - 1][gardeY].traverser) {
-          gardeX--;
-        }
-        break;
-    }
+      switch (direction) {
+        case "haut":
+          garde.style.backgroundImage = "url('img/zeldaGardeVertHaut.gif')";
+          if (gardeY > 0 && blocGrid[gardeX][gardeY - 1].traverser) {
+            gardeY--;
+          }
+          break;
+        case "droite":
+          garde.style.backgroundImage = "url('img/zeldaGardeVertDroit.gif')";
+          if (gardeX < H_GRID - 1 && blocGrid[gardeX + 1][gardeY].traverser) {
+            gardeX++;
+          }
+          break;
+        case "bas":
+          garde.style.backgroundImage = "url('img/zeldaGardeVertBas.gif')";
+          if (gardeY < H_GRID - 1 && blocGrid[gardeX][gardeY + 1].traverser) {
+            gardeY++;
+          }
+          break;
+        case "gauche":
+          garde.style.backgroundImage = "url('img/zeldaGardeVertGauche.gif')";
+          if (gardeX > 0 && blocGrid[gardeX - 1][gardeY].traverser) {
+            gardeX--;
+          }
+          break;
+      }
 
-    garde.style.left = String(gardeX * GRID_SIZE) + "px";
-    garde.style.top = String(gardeY * GRID_SIZE) + "px";
+      garde.style.left = String(gardeX * GRID_SIZE) + "px";
+      garde.style.top = String(gardeY * GRID_SIZE) + "px";
 
-    let random = random100();
+      let random = random100();
 
       if (random < 25) {
         direction = "haut";
@@ -103,18 +103,19 @@ function rondeGarde() {
         personnage.style.backgroundSize = "contain";
         personnage.style.backgroundPosition = "center";
         persoDead = true;
-        setTimeout(function() {alert("Un garde t'as tué ! GAME OVER, Recommencer ?");
-        document.location.reload(true);
+        setTimeout(function() {
+          alert("Un garde t'as tué ! GAME OVER, Recommencer ?");
+          document.location.reload(true);
         }, 2000);
         break;
       }
     }
     frame = 0;
   }
-frame++;
+  frame++;
 
-// On crée l'animation - 60 x / seconde
-window.requestAnimationFrame(rondeGarde);
+  // On crée l'animation - 60 x / seconde
+  window.requestAnimationFrame(rondeGarde);
 
 }
 

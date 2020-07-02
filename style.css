@@ -66,9 +66,10 @@ h3 {
 }
 
 #commandes li {
-   list-style-type: none;
-   font-family: 'Zelda_Past', serif;
+  list-style-type: none;
+  font-family: 'Zelda_Past', serif;
 }
+
 #commandes small {
   font-style: italic;
   font-family: none;

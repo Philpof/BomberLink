@@ -5,39 +5,39 @@ var persoDead = false;
 
 document.onkeydown = function() {
   var event = event || window.event,
-  zqsd = event.keyCode;
+    zqsd = event.keyCode;
 
   if (persoDead) {
-  return;
+    return;
   }
 
-  switch(zqsd) {
+  switch (zqsd) {
     case 38: // touche "Flèche Haut"
     case 90: // touche : Z
       // startAnimationHaut();
-      if (y > 0 && blocGrid[x / GRID_SIZE][y / GRID_SIZE -1].traverser)
-      y = y - GRID_SIZE;
+      if (y > 0 && blocGrid[x / GRID_SIZE][y / GRID_SIZE - 1].traverser)
+        y = y - GRID_SIZE;
       break;
 
     case 39: // touche "Flèche Droite"
     case 68: // touche "D"
       // startAnimationDroite();
-      if (x < WINDOW_WIDTH && blocGrid[x / GRID_SIZE +1][y / GRID_SIZE].traverser)
-      x = x + GRID_SIZE;
+      if (x < WINDOW_WIDTH && blocGrid[x / GRID_SIZE + 1][y / GRID_SIZE].traverser)
+        x = x + GRID_SIZE;
       break;
 
     case 40: // touche "Flèche Bas"
     case 83: // touche "S"
       // startAnimationBas();
-      if (y < WINDOW_HEIGHT && blocGrid[x / GRID_SIZE][y / GRID_SIZE +1].traverser)
-      y = y + GRID_SIZE;
+      if (y < WINDOW_HEIGHT && blocGrid[x / GRID_SIZE][y / GRID_SIZE + 1].traverser)
+        y = y + GRID_SIZE;
       break;
 
     case 37: // touche "Flèche Gauche"
     case 81: // touche "Q"
       // startAnimationGauche();
-      if (x > 0 && blocGrid[x / GRID_SIZE -1][y / GRID_SIZE].traverser)
-      x = x - GRID_SIZE;
+      if (x > 0 && blocGrid[x / GRID_SIZE - 1][y / GRID_SIZE].traverser)
+        x = x - GRID_SIZE;
       break;
 
     case 32: // touche "Espace"
@@ -46,7 +46,8 @@ document.onkeydown = function() {
       }
       break;
 
-    default: return;
+    default:
+      return;
   }
 
   // Si le perso va sur un ennemi, il meurt
@@ -57,14 +58,15 @@ document.onkeydown = function() {
       personnageADeplacer.style.backgroundSize = "contain";
       personnageADeplacer.style.backgroundPosition = "center";
       persoDead = true;
-      setTimeout(function() {alert("Tu as foncé sur un garde ! C'est moche ! GAME OVER, on recommence ?");
-      document.location.reload(true);
+      setTimeout(function() {
+        alert("Tu as foncé sur un garde ! C'est moche ! GAME OVER, on recommence ?");
+        document.location.reload(true);
       }, 3000);
       break;
     }
   }
 
-// Le Perso se déplace
+  // Le Perso se déplace
   personnageADeplacer.style.left = String(x) + 'px';
   personnageADeplacer.style.top = String(y) + 'px';
 
@@ -73,18 +75,19 @@ document.onkeydown = function() {
 
     // for (var i = 0; i < trous.length; i++) {
 
-      if (trou.offsetLeft == x && trou.offsetTop == y) {
-        personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
-        personnageADeplacer.style.backgroundRepeat = "no-repeat";
-        personnageADeplacer.style.backgroundSize = "contain";
-        personnageADeplacer.style.backgroundPosition = "center";
-        persoDead = true;
-        setTimeout(function() {document.getElementById('personnage').remove();
+    if (trou.offsetLeft == x && trou.offsetTop == y) {
+      personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
+      personnageADeplacer.style.backgroundRepeat = "no-repeat";
+      personnageADeplacer.style.backgroundSize = "contain";
+      personnageADeplacer.style.backgroundPosition = "center";
+      persoDead = true;
+      setTimeout(function() {
+        document.getElementById('personnage').remove();
         alert("Attention où tu mets les pieds, il y a des trous par terre ! GAME OVER, On recommence ?");
         document.location.reload(true);
-        }, 2000);
-        return;
-      }
+      }, 2000);
+      return;
+    }
     // }
   }
 }

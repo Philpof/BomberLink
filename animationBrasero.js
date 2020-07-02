@@ -15,21 +15,20 @@ let iFeu = 0;
 
 function changerImageFeu() {
 
-    if (iFeu < imagesFeu.length-1) {
-      feuBrasero.forEach(flamme => {
-        if (flamme.className === "feuBrasero") {
-          flamme.style.backgroundImage = imagesFeu[iFeu];
-        }
-      });
-      iFeu++;
-    }
-    else {
-      feuBrasero.forEach(flamme => {
-        if (flamme.className === "feuBrasero") {
-          flamme.style.backgroundImage = imagesFeu[3];
-        }
-      });
-      iFeu = 0;
-    }
+  if (iFeu < imagesFeu.length - 1) {
+    feuBrasero.forEach(flamme => {
+      if (flamme.className === "feuBrasero") {
+        flamme.style.backgroundImage = imagesFeu[iFeu];
+      }
+    });
+    iFeu++;
+  } else {
+    feuBrasero.forEach(flamme => {
+      if (flamme.className === "feuBrasero") {
+        flamme.style.backgroundImage = imagesFeu[3];
+      }
+    });
+    iFeu = 0;
+  }
   window.setTimeout("changerImageFeu()", 75)
 }

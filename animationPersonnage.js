@@ -28,7 +28,6 @@ function startAnimationBas() {
   setTimeout(stopAnimation, 400)
 }
 
-
 function startAnimationHaut() {
   stopAnimation();
   var position = widthOfEachSprite; //start position for the image
@@ -39,8 +38,7 @@ function startAnimationHaut() {
     spriteSheet.style.backgroundPosition = `-${position}px 80px`;
     if (position < widthOfSpriteSheet) {
       position = position + diff;
-    }
-    else {
+    } else {
       //increment the position by the width of each sprite each time
       position = widthOfEachSprite;
     }
@@ -48,7 +46,6 @@ function startAnimationHaut() {
   }, speed);
   setTimeout(stopAnimation, 400)
 }
-
 
 function startAnimationGauche() {
   stopAnimation();
