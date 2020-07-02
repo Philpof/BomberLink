@@ -24,16 +24,16 @@ h3 {
   margin: 0.3em;
 }
 
-#commandes img {
-  width: 50%;
-  height: auto;
-}
-
 #general {
   display: flex;
   flex-direction: row;
   font-family: 'Zelda', serif;
   font-size: 2em;
+}
+
+#commandes img {
+  width: 50%;
+  height: auto;
 }
 
 #commandes h3 {
@@ -68,11 +68,11 @@ h3 {
 #personnage {
   position: absolute;
   z-index: 90;
-  background-image: url("sprites/imagesLink.png");
+  background-image: url("img/zeldaLink.png");
   /* background-image: url("sprites/zeldaLinkMouvements.jpg"; */
-  /* background-repeat: no-repeat; */
-  /* background-size: 40px 40px; */
-  background-position: 0px 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   top: 0px;
   left: 0px;
 }

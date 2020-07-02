@@ -98,13 +98,14 @@ function rondeGarde() {
 
       // Si le garde va sur le perso, celui-ci meurt
       if (personnage.offsetLeft == garde.gardeX * GRID_SIZE && personnage.offsetTop == garde.gardeY * GRID_SIZE) {
-        personnage.style.backgroundImage = "url('img/zeldaMort.png')";
+        personnage.style.backgroundImage = "url('img/zeldaLinkMortEpee.png')";
         personnage.style.backgroundRepeat = "no-repeat";
-        personnage.style.backgroundSize = "auto";
+        personnage.style.backgroundSize = "contain";
         personnage.style.backgroundPosition = "center";
         persoDead = true;
-        alert("Un garde t'as tué ! GAME OVER, Recommencer ?");
+        setTimeout(function() {alert("Un garde t'as tué ! GAME OVER, Recommencer ?");
         document.location.reload(true);
+        }, 2000);
         break;
       }
     }

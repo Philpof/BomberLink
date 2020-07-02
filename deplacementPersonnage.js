@@ -52,13 +52,14 @@ document.onkeydown = function() {
   // Si le perso va sur un ennemi, il meurt
   for (var i = 0; i < gardes.length; i++) {
     if (x == gardes[i].offsetLeft && y == gardes[i].offsetTop) {
-      personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkMort.png')";
+      personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkMortEpee.png')";
       personnageADeplacer.style.backgroundRepeat = "no-repeat";
-      personnageADeplacer.style.backgroundSize = "auto";
+      personnageADeplacer.style.backgroundSize = "contain";
       personnageADeplacer.style.backgroundPosition = "center";
       persoDead = true;
-      alert("Tu as foncé sur un garde ! C'est moche ! GAME OVER, on recommence ?");
+      setTimeout(function() {alert("Tu as foncé sur un garde ! C'est moche ! GAME OVER, on recommence ?");
       document.location.reload(true);
+      }, 3000);
       break;
     }
   }
@@ -75,12 +76,13 @@ document.onkeydown = function() {
       if (trou.offsetLeft == x && trou.offsetTop == y) {
         personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
         personnageADeplacer.style.backgroundRepeat = "no-repeat";
-        personnageADeplacer.style.backgroundSize = "auto";
+        personnageADeplacer.style.backgroundSize = "contain";
         personnageADeplacer.style.backgroundPosition = "center";
         persoDead = true;
-        setTimeout(function() {document.getElementById('personnage').remove();}, 500)
+        setTimeout(function() {document.getElementById('personnage').remove();
         alert("Attention où tu mets les pieds, il y a des trous par terre ! GAME OVER, On recommence ?");
         document.location.reload(true);
+        }, 2000);
         return;
       }
     // }
