@@ -8,6 +8,11 @@
   src: url('fonts/HylianSymbols.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Zelda_Past';
+  src: url('fonts/Charlemagne.ttf') format('truetype');
+}
+
 html {
   background-image: url("img/zeldaBackground.png");
 }
@@ -19,8 +24,8 @@ h3 {
 
 /* Animation de la TriForce avec un .gif pour tester */
 .tri_force {
-  max-width: 28px;
-  max-height: 30px;
+  max-width: 46px;
+  max-height: 60px;
   margin: 0.3em;
 }
 
@@ -31,8 +36,13 @@ h3 {
   font-size: 2em;
 }
 
+#commandes {
+  max-width: 400px;
+  height: auto;
+}
+
 #commandes img {
-  width: 50%;
+  width: 100%;
   height: auto;
 }
 
@@ -40,6 +50,12 @@ h3 {
   text-decoration: underline;
   text-transform: capitalize;
   margin-top: 0;
+  justify-content: center;
+}
+
+#commandes h3 span {
+  margin: auto;
+  font-size: 1.3em;
 }
 
 #commandes li span {
@@ -51,11 +67,12 @@ h3 {
 
 #commandes li {
    list-style-type: none;
+   font-family: 'Zelda_Past', serif;
 }
 #commandes small {
   font-style: italic;
   font-family: none;
-  font-size: 0.3em;
+  font-size: 0.4em;
 }
 
 #plateau {
