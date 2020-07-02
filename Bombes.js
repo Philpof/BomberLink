@@ -15,6 +15,8 @@ for (var i = 0; i < 3; i++) {
   bombes.push(bombe);
 }
 
+//check
+
 let explosions = [];
 for (var i = 0; i < 4; i++) {
   let explosion = document.createElement("div");
