@@ -1,3 +1,6 @@
+const VICTOIRE = "Bravo ! Tu as sauvé Hyrule ! On recommence ?";
+const DEFAITEBOMBE = "Oula ! Faut pas rester près d'une bombe, hein ! GAME OVER, on recommence ?";
+
 var personnageADeplacer = document.getElementById('personnage');
 var x = personnageADeplacer.offsetLeft; // On récupère la position absolue initiale (gauche).
 var y = personnageADeplacer.offsetTop; // On récupère la position absolue initiale (haut).
@@ -78,6 +81,20 @@ document.onkeydown = function() {
     document.getElementById("cle").remove();
   }
 
+  // Si le perso va devant le coffre, il ouvre le coffre et c'est gagné !
+  var devantCoffre = document.getElementById("solRed3F");
+  devantCoffre.x = devantCoffre.offsetLeft;
+  devantCoffre.y = devantCoffre.offsetTop;
+
+  if (personnage.offsetLeft == devantCoffre.x && personnage.offsetTop == devantCoffre.y && cle.ramasse) {
+    document.getElementById("coffreClose").style.backgroundImage = "url('img/zeldaCoffreOpen3F.gif')";
+    setTimeout(function() {
+      alert(VICTOIRE);
+      document.location.reload(true);
+    }, 1500)
+    return;
+  }
+
 
   // Le Perso tombe s'il va sur un trou
   if (document.getElementById('trou')) {
@@ -99,4 +116,5 @@ document.onkeydown = function() {
     }
     // }
   }
+
 }

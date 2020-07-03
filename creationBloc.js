@@ -65,7 +65,12 @@ for (var i = 0; i < H_GRID; i++) {
       bloc.style.zIndex = "60";
       bloc.id = "coffreClose";
     }
-    else if (i === (okH_GRID + 1) && j === (okV_GRID) || i === (okH_GRID) && j === (okV_GRID + 1) || i === (okH_GRID - 1) && j === (okV_GRID) || i === (okH_GRID) && j === (okV_GRID - 1) || i === (okH_GRID + 1) && j === (okV_GRID + 1) || i === (okH_GRID + 1) && j === (okV_GRID - 1) || i === (okH_GRID - 1) && j === (okV_GRID + 1) || i === (okH_GRID - 1) && j === (okV_GRID - 1)) {
+    else if (i === (okH_GRID) && j === (okV_GRID + 1)) {
+      bloc.style.backgroundImage = "url('img/zeldaSolChateauRed3F.png')";
+      bloc.id = "solRed3F";
+      bloc.traverser = true;
+    }
+    else if (i === (okH_GRID + 1) && j === (okV_GRID) || i === (okH_GRID - 1) && j === (okV_GRID) || i === (okH_GRID) && j === (okV_GRID - 1) || i === (okH_GRID + 1) && j === (okV_GRID + 1) || i === (okH_GRID + 1) && j === (okV_GRID - 1) || i === (okH_GRID - 1) && j === (okV_GRID + 1) || i === (okH_GRID - 1) && j === (okV_GRID - 1)) {
       bloc.style.backgroundImage = "url('img/zeldaSolChateauRed.png')";
       bloc.id = "solRed";
       bloc.traverser = true;

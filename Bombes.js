@@ -1,6 +1,3 @@
-const VICTOIRE = "Bravo ! Tu as gagné ! On recommence ?";
-const DEFAITEBOMBE = "Oula ! Faut pas rester près d'une bombe, hein ! GAME OVER, on recommence ?";
-
 let bombes = [];
 for (var i = 0; i < 3; i++) {
   let bombe = document.createElement("div");
