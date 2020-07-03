@@ -103,3 +103,11 @@ h3 {
 .pot {
   z-index: 50;
 }
+
+#clePlateau {
+  margin: 2em;
+}
+
+#imageCle {
+  min-width: 2em;
+}

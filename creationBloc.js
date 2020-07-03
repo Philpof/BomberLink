@@ -11,6 +11,7 @@ const WINDOW_HEIGHT = V_GRID * GRID_SIZE;
 // Chargement des fonctions
 window.onload = function() {
   changerImageFeu(); // fonction pour l'animation des Braseros
+  creationCle(); // fonction pour créer la clé du coffre
 }
 
 // Création du plateau de jeu
@@ -34,13 +35,13 @@ if (Number.isInteger(testH_GRID) && Number.isInteger(testV_GRID)) {
   var okV_GRID = testV_GRID;
 } else if (Number.isInteger(testH_GRID)) {
   var okH_GRID = testH_GRID;
-  var okV_GRID = testV_GRID + 0.5;
+  var okV_GRID = testV_GRID - 0.5;
 } else if (Number.isInteger(testV_GRID)) {
-  var okH_GRID = testH_GRID + 0.5;
+  var okH_GRID = testH_GRID - 0.5;
   var okV_GRID = testV_GRID;
 } else {
-  var okH_GRID = testH_GRID + 0.5;
-  var okV_GRID = testV_GRID + 0.5;
+  var okH_GRID = testH_GRID - 0.5;
+  var okV_GRID = testV_GRID - 0.5;
 }
 
 // Création des bloc aléatoire
@@ -63,19 +64,28 @@ for (var i = 0; i < H_GRID; i++) {
       bloc.traverser = false;
       bloc.style.zIndex = "60";
       bloc.id = "coffreClose";
-    } else if (random100() > 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
+    }
+    else if (i === (okH_GRID + 1) && j === (okV_GRID) || i === (okH_GRID) && j === (okV_GRID + 1) || i === (okH_GRID - 1) && j === (okV_GRID) || i === (okH_GRID) && j === (okV_GRID - 1) || i === (okH_GRID + 1) && j === (okV_GRID + 1) || i === (okH_GRID + 1) && j === (okV_GRID - 1) || i === (okH_GRID - 1) && j === (okV_GRID + 1) || i === (okH_GRID - 1) && j === (okV_GRID - 1)) {
+      bloc.style.backgroundImage = "url('img/zeldaSolChateauRed.png')";
+      bloc.id = "solRed";
+      bloc.traverser = true;
+    }
+    else if (random100() > 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.className = "feuBrasero";
       bloc.id = "feuBrasero";
       bloc.traverser = false;
-    } else if (random100() > 84 && random100() <= 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
+    }
+    else if (random100() > 84 && random100() <= 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.style.backgroundImage = "url('img/zeldaSolChateauFissure.png')";
       bloc.id = "fissure";
       bloc.traverser = true;
-    } else if (random100() > 60 && random100() <= 84 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
+    }
+    else if (random100() > 60 && random100() <= 84 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.style.backgroundImage = "url('img/zeldaSolEtPot.png')";
       bloc.id = "pot";
       bloc.traverser = false;
-    } else {
+    }
+    else {
       bloc.style.backgroundImage = "url('img/zeldaSolChateau.png')";
       bloc.id = "sol";
       bloc.traverser = true;

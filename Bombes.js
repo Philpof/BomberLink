@@ -99,7 +99,7 @@ function creationBombes(blocGrid) {
             var perso = document.getElementById('personnage');
 
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -110,7 +110,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -121,7 +121,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -132,7 +132,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -143,7 +143,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -205,10 +205,9 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'solSansPot';
                 blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
-                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
-                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
+              //   blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
                 blocGrid[(bombe.x) + 1][bombe.y].className = 'feuStop';
@@ -231,10 +230,9 @@ function creationBombes(blocGrid) {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'solSansPot';
                 blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
                 blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
-                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
-                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
+              //   blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
                 blocGrid[bombe.x][(bombe.y) + 1].className = 'feuStop';
@@ -256,10 +254,9 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'solSansPot';
                 blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
                 blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
-                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
-                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
+              //   blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
                 blocGrid[(bombe.x) - 1][bombe.y].className = 'feuStop';
@@ -281,10 +278,9 @@ function creationBombes(blocGrid) {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'solSansPot';
                 blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
                 blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
-                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
-                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
+              //   blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
                 blocGrid[bombe.x][(bombe.y) - 1].className = 'feuStop';
@@ -378,7 +374,7 @@ function creationBombes(blocGrid) {
             var perso = document.getElementById('personnage');
 
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -389,7 +385,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -400,7 +396,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -411,7 +407,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -422,7 +418,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -484,10 +480,9 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'solSansPot';
                 blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
-                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
-                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
+              //   blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
                 blocGrid[(bombe.x) + 1][bombe.y].className = 'feuStop';
@@ -509,10 +504,9 @@ function creationBombes(blocGrid) {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'solSansPot';
                 blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
                 blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
-                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
-                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
+              //   blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
                 blocGrid[bombe.x][(bombe.y) + 1].className = 'feuStop';
@@ -534,10 +528,9 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'solSansPot';
                 blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
                 blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
-                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
-                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
+              //   blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
                 blocGrid[(bombe.x) - 1][bombe.y].className = 'feuStop';
@@ -559,10 +552,9 @@ function creationBombes(blocGrid) {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'solSansPot';
                 blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
                 blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
-                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
-                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
+              //   blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
                 blocGrid[bombe.x][(bombe.y) - 1].className = 'feuStop';
@@ -656,7 +648,7 @@ function creationBombes(blocGrid) {
             var perso = document.getElementById('personnage');
 
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -667,7 +659,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) - GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -678,7 +670,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) - GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -689,7 +681,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) + GRID_SIZE == perso.offsetLeft && parseInt(bombe.style.top) == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -700,7 +692,7 @@ function creationBombes(blocGrid) {
               }, 1000);
             }
             if (parseInt(bombe.style.left) == perso.offsetLeft && parseInt(bombe.style.top) + GRID_SIZE == perso.offsetTop) {
-              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.png')";
+              perso.style.backgroundImage = "url('img/zeldaLinkMortBombe.gif')";
               perso.style.backgroundRepeat = "no-repeat";
               perso.style.backgroundSize = "auto";
               perso.style.backgroundPosition = "center";
@@ -763,10 +755,9 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'solSansPot';
                 blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
-                blocGrid[(bombe.x) + 1][bombe.y].traverser = false;
-                blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[(bombe.x) + 1][bombe.y].id = 'coffreOpen';
+              //   blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'feuStop';
                 blocGrid[(bombe.x) + 1][bombe.y].className = 'feuStop';
@@ -788,10 +779,9 @@ function creationBombes(blocGrid) {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'solSansPot';
                 blocGrid[bombe.x][(bombe.y) + 1].traverser = true;
                 blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
-                blocGrid[bombe.x][(bombe.y) + 1].traverser = false;
-                blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[bombe.x][(bombe.y) + 1].id = 'coffreOpen';
+              //   blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'feuStop';
                 blocGrid[bombe.x][(bombe.y) + 1].className = 'feuStop';
@@ -813,10 +803,9 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'solSansPot';
                 blocGrid[(bombe.x) - 1][bombe.y].traverser = true;
                 blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
-                blocGrid[(bombe.x) - 1][bombe.y].traverser = false;
-                blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[(bombe.x) - 1][bombe.y].id = 'coffreOpen';
+              //   blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'feuStop';
                 blocGrid[(bombe.x) - 1][bombe.y].className = 'feuStop';
@@ -838,10 +827,9 @@ function creationBombes(blocGrid) {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'solSansPot';
                 blocGrid[bombe.x][(bombe.y) - 1].traverser = true;
                 blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolSansPot.png')";
-              } else if (idElement === "coffreClose") {
-                blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
-                blocGrid[bombe.x][(bombe.y) - 1].traverser = false;
-                blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
+              // } else if (idElement === "coffreClose") {
+              //   blocGrid[bombe.x][(bombe.y) - 1].id = 'coffreOpen';
+              //   blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaCoffreOpen.png')";
               } else if (idElement === "feuBrasero") {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'feuStop';
                 blocGrid[bombe.x][(bombe.y) - 1].className = 'feuStop';

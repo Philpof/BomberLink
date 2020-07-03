@@ -70,6 +70,15 @@ document.onkeydown = function() {
   personnageADeplacer.style.left = String(x) + 'px';
   personnageADeplacer.style.top = String(y) + 'px';
 
+
+  // Si le perso va sur la clé, il ramasse la clé
+  if (personnage.offsetLeft == cle.offsetLeft && personnage.offsetTop == cle.offsetTop) {
+    document.getElementById("imageCle").src = "img/zeldaLinkAvecCle.png";
+    cle.ramasse = true;
+    document.getElementById("cle").remove();
+  }
+
+
   // Le Perso tombe s'il va sur un trou
   if (document.getElementById('trou')) {
 
