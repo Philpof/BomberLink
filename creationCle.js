@@ -8,11 +8,13 @@ cle.style.backgroundPosition = "center";
 cle.style.zIndex = "100";
 cle.id = "cle";
 cle.style.backgroundImage = "url('img/zeldaCle.png')";
-cle.style.top = GRID_SIZE + "px";
-cle.style.left = "0px";
+cle.style.top = H_GRID * GRID_SIZE - GRID_SIZE + "px";
+cle.style.left = H_GRID * GRID_SIZE - GRID_SIZE + "px";
 cle.ramasse = false;
-
+cle.passage = false;
 
 function creationCle() {
-  document.getElementById("plateau").appendChild(cle);
+  if (!document.getElementById("cle")) {
+    document.getElementById("plateau").appendChild(cle);
+  }
 }

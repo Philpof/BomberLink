@@ -75,16 +75,25 @@ document.onkeydown = function() {
 
 
   // Si le perso va sur la clé, il ramasse la clé
-  if (personnage.offsetLeft == cle.offsetLeft && personnage.offsetTop == cle.offsetTop) {
+  if (document.getElementById("cle") && personnage.offsetLeft == cle.offsetLeft && personnage.offsetTop == cle.offsetTop) {
     document.getElementById("imageCle").src = "img/zeldaLinkAvecCle.png";
     cle.ramasse = true;
-    document.getElementById("cle").remove();
+    cle.style.backgroundImage = "";
+    if (cle.ramasse && cle.passage) {
+      document.getElementById("texteBa").style.display = "block";
+      document.getElementById("texteBb").style.display = "block";
+    }
+    else if (cle.ramasse) {
+      document.getElementById("texteC").style.display = "block";
+    }
   }
 
   // Si le perso va devant le coffre, il ouvre le coffre et c'est gagné !
   var devantCoffre = document.getElementById("solRed3F");
   devantCoffre.x = devantCoffre.offsetLeft;
   devantCoffre.y = devantCoffre.offsetTop;
+
+  console.log(cle.passage);
 
   if (personnage.offsetLeft == devantCoffre.x && personnage.offsetTop == devantCoffre.y && cle.ramasse) {
     document.getElementById("coffreClose").style.backgroundImage = "url('img/zeldaCoffreOpen3F.gif')";
@@ -93,6 +102,10 @@ document.onkeydown = function() {
       document.location.reload(true);
     }, 1500)
     return;
+  }
+  else if (personnage.offsetLeft == devantCoffre.x && personnage.offsetTop == devantCoffre.y) {
+    cle.passage = true;
+    document.getElementById("texteBa").style.display = "block";
   }
 
 

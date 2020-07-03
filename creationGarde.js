@@ -7,7 +7,7 @@ for (var i = 0; i < NOMBREGARDE; i++) {
   let x = 0;
   let y = 0;
 
-  while (!blocGrid[x][y].traverser || (x === 0 && y === 0) || /* Exclusion des positions ci-après pour la position de x et y */ (x >= 0 && x <= 1 && y >= 0 && y <= 1 || x >= (H_GRID - 2) && x < H_GRID && y >= 0 && y <= 1 || x >= 0 && x <= 1 && y >= (V_GRID - 2) && y < V_GRID || x >= (H_GRID - 2) && x < H_GRID && y >= (V_GRID - 2) && y < V_GRID)) {
+  while (!blocGrid[x][y].traverser ||/* Exclusion des positions ci-après pour la position de x et y */  (x === 0 && y === 0) || (x >= 0 && x <= 1 && y >= 0 && y <= 1 || x >= (H_GRID - 2) && x < H_GRID && y >= 0 && y <= 1 || x >= 0 && x <= 1 && y >= (V_GRID - 2) && y < V_GRID || x >= (H_GRID - 2) && x < H_GRID && y >= (V_GRID - 2) && y < V_GRID)) {
     x = Math.floor(Math.random() * (H_GRID));
     y = Math.floor(Math.random() * (V_GRID));
   }

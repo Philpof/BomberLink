@@ -37,7 +37,8 @@ h3 {
 }
 
 #commandes {
-  max-width: 400px;
+  min-width: 400px;
+  margin-right: 0.5em;
   height: auto;
 }
 
@@ -81,6 +82,7 @@ h3 {
   margin-right: 0;
   margin-left: 0;
   margin-top: 0.3em;
+  /* min-width: 800px; */
 }
 
 #personnage {
@@ -105,9 +107,33 @@ h3 {
 }
 
 #clePlateau {
-  margin: 2em;
+  margin: 1em;
+}
+
+#clePlateau q {
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Zelda_Past', serif;
 }
 
 #imageCle {
   min-width: 2em;
+  float: left;
+}
+
+#texteA {
+
+}
+
+#texteBa {
+  display: none;
+}
+
+#texteBb {
+  display: none;
+}
+
+#texteC {
+  display: none;
+
 }

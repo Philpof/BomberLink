@@ -11,13 +11,14 @@ const WINDOW_HEIGHT = V_GRID * GRID_SIZE;
 // Chargement des fonctions
 window.onload = function() {
   changerImageFeu(); // fonction pour l'animation des Braseros
-  creationCle(); // fonction pour créer la clé du coffre
 }
 
 // Création du plateau de jeu
 var plateau = document.getElementById('plateau');
 plateau.style.width = WINDOW_WIDTH + "px";
+plateau.style.minWidth = H_GRID * GRID_SIZE + "px";
 plateau.style.height = WINDOW_HEIGHT + "px";
+plateau.style.minHeight = V_GRID * GRID_SIZE + "px";
 plateau.style.border = "64px solid";
 plateau.style.borderImage = "url('img/zeldaMurChateau.png') 64 round";
 
