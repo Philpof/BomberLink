@@ -93,8 +93,6 @@ document.onkeydown = function() {
   devantCoffre.x = devantCoffre.offsetLeft;
   devantCoffre.y = devantCoffre.offsetTop;
 
-  console.log(cle.passage);
-
   if (personnage.offsetLeft == devantCoffre.x && personnage.offsetTop == devantCoffre.y && cle.ramasse) {
     document.getElementById("coffreClose").style.backgroundImage = "url('img/zeldaCoffreOpen3F.gif')";
     setTimeout(function() {

@@ -60,13 +60,13 @@ for (var i = 0; i < H_GRID; i++) {
     bloc.style.backgroundSize = "contain";
     bloc.style.backgroundPosition = "center";
 
-    if (i === (okH_GRID) && j === (okV_GRID)) { // Le "div" au centre du plateau devient un "coffre fermé"
+    if (i === (okH_GRID) && j === (okV_GRID)) { // La "div" au centre du plateau devient un "coffre fermé"
       bloc.style.backgroundImage = "url('img/zeldaCoffreClose.png')";
       bloc.traverser = false;
       bloc.style.zIndex = "60";
       bloc.id = "coffreClose";
     }
-    else if (i === (okH_GRID) && j === (okV_GRID + 1)) {
+    else if (i === (okH_GRID) && j === (okV_GRID + 1)) { // La "div" devant le coffre
       bloc.style.backgroundImage = "url('img/zeldaSolChateauRed3F.png')";
       bloc.id = "solRed3F";
       bloc.traverser = true;
@@ -76,6 +76,12 @@ for (var i = 0; i < H_GRID; i++) {
       bloc.id = "solRed";
       bloc.traverser = true;
     }
+    // else if (i === (H_GRID + 1) && j === V_GRID) {
+    //   bloc.style.backgroundImage = "url('img/zeldaExiteRight.png')";
+    //   bloc.zIndex = 100;
+    //   bloc.id = "Exit";
+    //   bloc.traverser = false;
+    // }
     else if (random100() > 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.className = "feuBrasero";
       bloc.id = "feuBrasero";

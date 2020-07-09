@@ -52,10 +52,6 @@ h3 {
   text-transform: capitalize;
   margin-top: 0;
   justify-content: center;
-}
-
-#commandes h3 span {
-  margin: auto;
   font-size: 1.3em;
 }
 
@@ -108,6 +104,19 @@ h3 {
 
 #clePlateau {
   margin: 1em;
+}
+
+#niveau {
+  font-family: 'Zelda', serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+#triforce {
+  min-width: 2em;
+  margin-top: 2em;
+  margin-left: 0.5em;
+  float: right;
 }
 
 #clePlateau q {

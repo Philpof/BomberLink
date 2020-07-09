@@ -14,7 +14,7 @@ cle.ramasse = false;
 cle.passage = false;
 
 function creationCle() {
-  if (!document.getElementById("cle")) {
+
     document.getElementById("plateau").appendChild(cle);
-  }
+
 }
