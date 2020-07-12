@@ -157,9 +157,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -168,9 +174,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -179,9 +191,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -190,9 +208,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -201,9 +225,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -303,7 +333,7 @@ function creationBombes(blocGrid) {
               blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
             }
             // Si on veut gagner si tous les gardes sont morts
-            // if (gardes.length == 0) {
+            // if (gardes.length == 1) {
             //   alert(VICTOIRE);
             //   document.location.reload(true);
             //   return;
@@ -436,9 +466,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -447,9 +483,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -458,9 +500,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -469,9 +517,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -480,9 +534,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -581,7 +641,7 @@ function creationBombes(blocGrid) {
               blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
             }
             // Si on veut gagner si tous les gardes sont morts
-            // if (gardes.length == 0) {
+            // if (gardes.length == 1) {
             //   alert(VICTOIRE);
             //   document.location.reload(true);
             //   return;
@@ -714,9 +774,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -725,9 +791,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -737,9 +809,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -748,9 +826,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -759,9 +843,15 @@ function creationBombes(blocGrid) {
                 gardes[i].traverser = true;
                 gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
                 gardes[i].style.backgroundSize = "auto";
+                gardes[i].style.backgroundPosition = "25% 25%";
                 gardes[i].style.zIndex = "50";
-                if (!document.getElementById("cle")) {
-                  creationCle();
+                // La clé n'apparait que sur le dernier garde tué
+                if (gardes.length == 1) {
+                  if (!document.getElementById("cle")) {
+                    cle.style.top = gardes[i].offsetTop + "px";
+                    cle.style.left = gardes[i].offsetLeft + "px";
+                    creationCle();
+                  }
                 }
                 gardes.splice(i, 1);
                 break;
@@ -860,7 +950,7 @@ function creationBombes(blocGrid) {
               blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
             }
             // Si on veut gagner si tous les gardes sont morts
-            // if (gardes.length == 0) {
+            // if (gardes.length == 1) {
             //   alert(VICTOIRE);
             //   document.location.reload(true);
             //   return;
