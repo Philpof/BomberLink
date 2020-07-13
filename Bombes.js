@@ -257,9 +257,8 @@ function creationBombes(blocGrid) {
                 blocGrid[(bombe.x) + 1][bombe.y].traverser = true;
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauPierres.png')";
               } else if (idElement === "fissure") {
-                blocGrid[(bombe.x) + 1][bombe.y].id = "trou" + String(i);
+                blocGrid[(bombe.x) + 1][bombe.y].id = "trou";
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
-                trous.push()
               }
               document.getElementById("explosion0").remove();
             }
