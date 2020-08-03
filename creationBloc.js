@@ -63,6 +63,7 @@ for (var i = 0; i < H_GRID; i++) {
     if (i === (okH_GRID) && j === (okV_GRID)) { // La "div" au centre du plateau devient un "coffre fermé"
       bloc.style.backgroundImage = "url('img/zeldaCoffreClose.png')";
       bloc.traverser = false;
+      bloc.tomber = false;
       bloc.style.zIndex = "60";
       bloc.id = "coffreClose";
     }
@@ -70,11 +71,13 @@ for (var i = 0; i < H_GRID; i++) {
       bloc.style.backgroundImage = "url('img/zeldaSolChateauRed3F.png')";
       bloc.id = "solRed3F";
       bloc.traverser = true;
+      bloc.tomber = false;
     }
     else if (i === (okH_GRID + 1) && j === (okV_GRID) || i === (okH_GRID - 1) && j === (okV_GRID) || i === (okH_GRID) && j === (okV_GRID - 1) || i === (okH_GRID + 1) && j === (okV_GRID + 1) || i === (okH_GRID + 1) && j === (okV_GRID - 1) || i === (okH_GRID - 1) && j === (okV_GRID + 1) || i === (okH_GRID - 1) && j === (okV_GRID - 1)) {
       bloc.style.backgroundImage = "url('img/zeldaSolChateauRed.png')";
       bloc.id = "solRed";
       bloc.traverser = true;
+      bloc.tomber = false;
     }
     // else if (i === (H_GRID + 1) && j === V_GRID) {
     //   bloc.style.backgroundImage = "url('img/zeldaExiteRight.png')";
@@ -86,21 +89,25 @@ for (var i = 0; i < H_GRID; i++) {
       bloc.className = "feuBrasero";
       bloc.id = "feuBrasero";
       bloc.traverser = false;
+      bloc.tomber = false;
     }
     else if (random100() > 84 && random100() <= 85 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.style.backgroundImage = "url('img/zeldaSolChateauFissure.png')";
       bloc.id = "fissure";
       bloc.traverser = true;
+      bloc.tomber = false;
     }
     else if (random100() > 60 && random100() <= 84 && /* Exclusion des positions ci-après pour le random */ !(i >= 0 && i <= 1 && j >= 0 && j <= 1 || i >= (H_GRID - 2) && i < H_GRID && j >= 0 && j <= 1 || i >= 0 && i <= 1 && j >= (V_GRID - 2) && j < V_GRID || i >= (H_GRID - 2) && i < H_GRID && j >= (V_GRID - 2) && j < V_GRID)) {
       bloc.style.backgroundImage = "url('img/zeldaSolEtPot.png')";
       bloc.id = "pot";
       bloc.traverser = false;
+      bloc.tomber = false;
     }
     else {
       bloc.style.backgroundImage = "url('img/zeldaSolChateau.png')";
       bloc.id = "sol";
       bloc.traverser = true;
+      bloc.tomber = false;
     }
 
     bloc.style.marginLeft = (i * GRID_SIZE) + "px";
