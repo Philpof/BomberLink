@@ -109,6 +109,36 @@ function rondeGarde() {
         }, 2000);
         break;
       }
+
+      // Si le garde va sur un trou, il tombe
+
+      // for (var i = 0; i < gardes.length; i++) {
+      // if (parseInt(bombe.style.left) == gardes[i].offsetLeft && parseInt(bombe.style.top) == gardes[i].offsetTop) {
+      // if (personnage.offsetLeft == garde.gardeX * GRID_SIZE && personnage.offsetTop == garde.gardeY * GRID_SIZE) {
+        // if (blocGrid[x / GRID_SIZE][y / GRID_SIZE].tomber) {
+        //   if (blocGrid[x / GRID_SIZE] == garde.gardeX * GRID_SIZE && blocGrid[y / GRID_SIZE] == garde.gardeY * GRID_SIZE) {
+        //
+        //   gardes[i].traverser = true;
+        //   gardes[i].style.backgroundImage = "url('img/zeldaMort.png')";
+        //   gardes[i].style.backgroundSize = "auto";
+        //   gardes[i].style.backgroundPosition = "25% 25%";
+        //   gardes[i].style.zIndex = "50";
+        //   // La clé n'apparait que sur le dernier garde tué
+        //   if (gardes.length == 1) {
+        //     if (!document.getElementById("cle")) {
+        //       cle.style.top = gardes[i].offsetTop + "px";
+        //       cle.style.left = gardes[i].offsetLeft + "px";
+        //       creationCle();
+        //     }
+        //   }
+        //   gardes.splice(i, 1);
+        //   break;
+        //   }
+        // }
+
+
+
+
     }
     frame = 0;
   }
