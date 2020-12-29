@@ -108,7 +108,6 @@ document.onkeydown = function() {
 
 
   // Le Perso tombe s'il va sur un trou
-
   if (blocGrid[x / GRID_SIZE][y / GRID_SIZE].tomber) {
     personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
     personnageADeplacer.style.backgroundRepeat = "no-repeat";
