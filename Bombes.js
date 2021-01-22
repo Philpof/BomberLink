@@ -259,6 +259,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[(bombe.x) + 1][bombe.y].id = "trou";
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[(bombe.x) + 1][bombe.y].tomber = true;
               }
               document.getElementById("explosion0").remove();
             }
@@ -280,6 +281,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'trou';
                 blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[bombe.x][(bombe.y) + 1].tomber = true;
               }
               document.getElementById("explosion1").remove();
             }
@@ -301,6 +303,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'trou';
                 blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[(bombe.x) - 1][bombe.y].tomber = true;
               }
               document.getElementById("explosion2").remove();
             }
@@ -322,6 +325,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'trou';
                 blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[bombe.x][(bombe.y) - 1].tomber = true;
               }
               document.getElementById("explosion3").remove();
             }
@@ -330,6 +334,7 @@ function creationBombes(blocGrid) {
             if (idElement === "fissure") {
               blocGrid[bombe.x][bombe.y].id = 'trou';
               blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              blocGrid[bombe.x][bombe.y].tomber = true;
             }
             // Si on veut gagner si tous les gardes sont morts
             // if (gardes.length == 1) {
@@ -567,6 +572,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'trou';
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[(bombe.x) + 1][bombe.y].tomber = true;
               }
               document.getElementById("explosion0").remove();
             }
@@ -588,6 +594,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'trou';
                 blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[bombe.x][(bombe.y) + 1].tomber = true;
               }
               document.getElementById("explosion1").remove();
             }
@@ -609,6 +616,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'trou';
                 blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[(bombe.x) - 1][bombe.y].tomber = true;
               }
               document.getElementById("explosion2").remove();
             }
@@ -630,6 +638,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'trou';
                 blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[bombe.x][(bombe.y) - 1].tomber = true;
               }
               document.getElementById("explosion3").remove();
             }
@@ -638,6 +647,7 @@ function creationBombes(blocGrid) {
             if (idElement === "fissure") {
               blocGrid[bombe.x][bombe.y].id = 'trou';
               blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              blocGrid[bombe.x][bombe.y].tomber = true;
             }
             // Si on veut gagner si tous les gardes sont morts
             // if (gardes.length == 1) {
@@ -876,6 +886,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[(bombe.x) + 1][bombe.y].id = 'trou';
                 blocGrid[(bombe.x) + 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[(bombe.x) + 1][bombe.y].tomber = true;
               }
               document.getElementById("explosion0").remove();
             }
@@ -897,6 +908,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[bombe.x][(bombe.y) + 1].id = 'trou';
                 blocGrid[bombe.x][(bombe.y) + 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[bombe.x][(bombe.y) + 1].tomber = true;
               }
               document.getElementById("explosion1").remove();
             }
@@ -918,6 +930,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[(bombe.x) - 1][bombe.y].id = 'trou';
                 blocGrid[(bombe.x) - 1][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[(bombe.x) - 1][bombe.y].tomber = true;
               }
               document.getElementById("explosion2").remove();
             }
@@ -939,6 +952,7 @@ function creationBombes(blocGrid) {
               } else if (idElement === "fissure") {
                 blocGrid[bombe.x][(bombe.y) - 1].id = 'trou';
                 blocGrid[bombe.x][(bombe.y) - 1].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+                blocGrid[bombe.x][(bombe.y) - 1].tomber = true;
               }
               document.getElementById("explosion3").remove();
             }
@@ -947,6 +961,7 @@ function creationBombes(blocGrid) {
             if (idElement === "fissure") {
               blocGrid[bombe.x][bombe.y].id = 'trou';
               blocGrid[bombe.x][bombe.y].style.backgroundImage = "url('img/zeldaSolChateauTrou.png')";
+              blocGrid[bombe.x][bombe.y].tomber = true;
             }
             // Si on veut gagner si tous les gardes sont morts
             // if (gardes.length == 1) {

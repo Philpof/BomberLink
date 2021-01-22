@@ -108,22 +108,17 @@ document.onkeydown = function() {
 
 
   // Le Perso tombe s'il va sur un trou
-  if (document.getElementById('trou')) {
-  // var trous = [];
-  //
-  // for (var i = 0; i < trous.length; i++) {
-    if (trou.offsetLeft == x && trou.offsetTop == y) {
-      personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
-      personnageADeplacer.style.backgroundRepeat = "no-repeat";
-      personnageADeplacer.style.backgroundSize = "contain";
-      personnageADeplacer.style.backgroundPosition = "center";
-      persoDead = true;
-      setTimeout(function() {
-        alert("Attention où tu mets les pieds, il y a des trous par terre ! GAME OVER, On recommence ?");
-        document.location.reload(true);
-      }, 2000);
-      return;
-    }
+  if (blocGrid[x / GRID_SIZE][y / GRID_SIZE].tomber) {
+    personnageADeplacer.style.backgroundImage = "url('img/zeldaLinkTombe.gif')";
+    personnageADeplacer.style.backgroundRepeat = "no-repeat";
+    personnageADeplacer.style.backgroundSize = "contain";
+    personnageADeplacer.style.backgroundPosition = "center";
+    persoDead = true;
+    setTimeout(function() {
+      alert("Attention où tu mets les pieds, il y a des trous par terre ! GAME OVER, On recommence ?");
+      document.location.reload(true);
+    }, 2000);
+    return;
   }
 
 }
